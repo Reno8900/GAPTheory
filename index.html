@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vacuum Gravity Theory — GAP: Gradient-Activated Pressure</title>
-  <meta name="description" content="GAP is a closed effective extension of general relativity in which gravity couples not to absolute vacuum energy, but to modular vacuum response. No dark matter particles. No free parameters." />
-  <meta property="og:title" content="Vacuum Gravity Theory — GAP" />
-  <meta property="og:description" content="A closed effective extension of GR. No system-dependent free parameters. Galaxy rotation, dark matter phenomenology, and dark energy from the quantum vacuum." />
+  <title>Vacuum Gravity Theory — A Coherence-Based Phase Model</title>
+  <meta name="description" content="A coherence-based phase model that appears to organize dark-matter-like behavior across galaxies, groups, and clusters using a single physical variable: ρ/σ³." />
+  <meta property="og:title" content="Vacuum Gravity Theory — Coherence Phase Model" />
+  <meta property="og:description" content="A coherence-based phase model organizing dark-matter behavior across galaxies, groups, and clusters using a single physical variable." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vacuumgravitytheory.org" />
 
@@ -24,1133 +24,1586 @@
         {left: '\\[', right: '\\]', display: true},
         {left: '\\(', right: '\\)', display: false}
       ]
-    })"></script>
+    });"></script>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%2301696F' stroke-width='2.5'/><circle cx='16' cy='16' r='5' fill='%2301696F'/><path d='M16 2 L16 8 M16 24 L16 30 M2 16 L8 16 M24 16 L30 16' stroke='%2301696F' stroke-width='2' stroke-linecap='round'/></svg>" />
 
   <style>
-    :root {
-      --bg:         #0e0f11;
-      --surface:    #141519;
-      --surface2:   #1a1c22;
-      --border:     #2a2d36;
-      --text:       #e2e4ea;
-      --text-muted: #7c8096;
-      --text-faint: #484c5e;
-      --accent:     #4ecdc4;
-      --accent2:    #a78bfa;
-      --confirmed:  #4ade80;
-      --consistent: #facc15;
-      --open:       #f87171;
-      --tier1:      #4ecdc4;
-      --tier2:      #a78bfa;
-    }
+  /* =========================================================
+     Vacuum Gravity Theory — coherence phase model
+     ========================================================= */
+  :root, [data-theme="dark"] {
+    --color-bg: #07090d;
+    --color-bg-alt: #0b0f16;
+    --color-surface: #101620;
+    --color-surface-raised: #151c28;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-strong: rgba(255, 255, 255, 0.14);
+    --color-text: #e6e8ec;
+    --color-text-strong: #ffffff;
+    --color-text-muted: #8b96a5;
+    --color-text-faint: #4a5563;
+    --color-primary: #4fb8c4;
+    --color-primary-deep: #01696F;
+    --color-primary-soft: rgba(79, 184, 196, 0.12);
+    --color-gold: #e8af34;
+    --color-gold-soft: rgba(232, 175, 52, 0.12);
+    --color-success: #4ade80;
+    --color-success-soft: rgba(74, 222, 128, 0.12);
+    --color-warn: #facc15;
+    --color-warn-soft: rgba(250, 204, 21, 0.10);
+    --color-danger: #f87171;
+    --color-danger-soft: rgba(248, 113, 113, 0.12);
+    --shadow-soft: 0 8px 40px rgba(0, 0, 0, 0.45);
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 6px 24px rgba(0,0,0,0.35);
+    --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'DM Mono', 'JetBrains Mono', ui-monospace, monospace;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --max-w: 1180px;
+    --transition: 180ms cubic-bezier(.4,0,.2,1);
+  }
+  [data-theme="light"] {
+    --color-bg: #f7f8fa; --color-bg-alt: #ffffff;
+    --color-surface: #ffffff; --color-surface-raised: #ffffff;
+    --color-border: rgba(10, 20, 35, 0.10); --color-border-strong: rgba(10, 20, 35, 0.18);
+    --color-text: #0e1520; --color-text-strong: #000000;
+    --color-text-muted: #4a5563; --color-text-faint: #aeb6c2;
+    --color-primary: #01696F; --color-primary-deep: #024e53;
+    --color-primary-soft: rgba(1, 105, 111, 0.08);
+    --color-gold: #a8791a; --color-gold-soft: rgba(168, 121, 26, 0.08);
+    --color-success: #16a34a; --color-success-soft: rgba(22, 163, 74, 0.08);
+    --color-warn: #b45309; --color-warn-soft: rgba(180, 83, 9, 0.08);
+    --color-danger: #b91c1c; --color-danger-soft: rgba(185, 28, 28, 0.08);
+    --shadow-soft: 0 8px 40px rgba(10, 20, 35, 0.08);
+    --shadow-card: 0 1px 2px rgba(10,20,35,0.04), 0 6px 24px rgba(10,20,35,0.06);
+  }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, var(--color-primary-soft), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, var(--color-gold-soft), transparent 60%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition), color var(--transition);
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
+  a:hover { color: var(--color-gold); }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(--color-text-strong); line-height: 1.2; margin: 0 0 0.6em; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; }
+  ul, ol { margin: 0; padding: 0; }
+  em { color: var(--color-text-strong); font-style: italic; }
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 
-    html { scroll-behavior: smooth; }
+  /* ---- Buttons ---- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px; border-radius: var(--radius-md);
+    font-family: var(--font-sans); font-size: 15px; font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+    cursor: pointer; border: 1px solid transparent;
+    text-decoration: none; white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--color-primary); color: #04212a;
+    box-shadow: 0 4px 20px rgba(79, 184, 196, 0.25);
+  }
+  [data-theme="light"] .btn-primary { color: #ffffff; box-shadow: 0 4px 18px rgba(1,105,111,0.2); }
+  .btn-primary:hover { transform: translateY(-1px); background: #66c8d3; color: #04212a; }
+  [data-theme="light"] .btn-primary:hover { background: var(--color-primary-deep); color: #fff; }
+  .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border-strong); }
+  .btn-ghost:hover { background: var(--color-surface); color: var(--color-primary); border-color: var(--color-primary); }
+  .btn-large { padding: 14px 26px; font-size: 16px; }
 
-    body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      font-size: 16px;
-    }
+  /* ---- Header ---- */
+  .site-header {
+    position: sticky; top: 0; z-index: 60;
+    backdrop-filter: saturate(1.4) blur(14px);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    background: color-mix(in oklab, var(--color-bg) 75%, transparent);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 18px; }
+  .nav-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--color-primary); font-weight: 600; font-size: 16px; letter-spacing: 0.04em; }
+  .nav-logo:hover { color: var(--color-gold); }
+  .nav-wordmark { font-family: var(--font-mono); font-weight: 500; }
+  .nav-links { list-style: none; display: flex; gap: 4px; margin-left: auto; align-items: center; }
+  .nav-links a { padding: 8px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--color-text-muted); }
+  .nav-links a:hover { color: var(--color-text); background: var(--color-surface); }
+  .nav-links .nav-cta { color: var(--color-primary); border: 1px solid var(--color-primary); margin-left: 6px; }
+  .nav-links .nav-cta:hover { background: var(--color-primary); color: #04212a; }
+  [data-theme="light"] .nav-links .nav-cta:hover { color: #fff; }
+  .theme-toggle, .mobile-menu-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 8px;
+    color: var(--color-text-muted);
+    transition: background var(--transition), color var(--transition);
+  }
+  .theme-toggle:hover, .mobile-menu-btn:hover { background: var(--color-surface); color: var(--color-primary); }
+  .mobile-menu-btn { display: none; }
+  .mobile-menu { display: none; border-top: 1px solid var(--color-border); background: var(--color-bg-alt); }
+  .mobile-menu[aria-hidden="false"] { display: block; }
+  .mobile-menu ul { list-style: none; padding: 8px 16px 18px; }
+  .mobile-menu .mobile-link { display: block; padding: 12px 8px; font-size: 15px; color: var(--color-text); border-bottom: 1px solid var(--color-border); }
+  .mobile-menu .mobile-link:last-child { border-bottom: none; }
+  @media (max-width: 940px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: inline-flex; }
+  }
 
-    /* ─── NAV ─── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(14,15,17,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
-      gap: 1rem;
-    }
-    .nav-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.01em;
-      text-decoration: none;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .nav-links {
-      display: flex; gap: 1.4rem; list-style: none;
-      flex-wrap: nowrap; overflow: hidden;
-    }
-    .nav-links a {
-      color: var(--text-muted); font-size: 0.82rem;
-      text-decoration: none; transition: color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover { color: var(--text); }
+  /* ---- Hero ---- */
+  .hero {
+    position: relative; padding: 60px 24px 50px;
+    overflow: hidden;
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px;
+    align-items: center;
+    max-width: var(--max-w); margin: 0 auto;
+  }
+  .hero-bg { position: absolute; inset: -100px 0 0 0; z-index: 0; pointer-events: none; }
+  .hero-glow {
+    position: absolute; top: 10%; right: -10%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--color-primary-soft), transparent 70%);
+    filter: blur(40px); animation: pulse 9s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 14px; border-radius: 999px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-family: var(--font-mono); font-size: 12px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--color-primary-soft);
+    margin-bottom: 20px;
+  }
+  .hero-title { font-size: clamp(2.1rem, 4.4vw, 3.4rem); margin-bottom: 18px; letter-spacing: -0.02em; }
+  .hero-title .accent { color: var(--color-primary); font-style: italic; font-family: var(--font-display); }
+  .hero-subtitle { font-size: 1.05rem; color: var(--color-text-muted); max-width: 560px; margin-bottom: 26px; }
+  .hero-headline-claim {
+    padding: 18px 22px;
+    border-left: 3px solid var(--color-gold);
+    background: var(--color-gold-soft);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: 26px;
+    font-size: 0.98rem;
+    color: var(--color-text);
+  }
+  .hero-headline-claim .label {
+    display: block;
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--color-gold); margin-bottom: 6px;
+  }
+  .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-diagram { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; }
+  .phase-svg { width: 100%; max-width: 460px; height: auto; }
+  @media (max-width: 940px) {
+    .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 36px; }
+    .hero-diagram { order: -1; }
+    .phase-svg { max-width: 380px; }
+  }
 
-    /* hamburger button */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column; justify-content: center; align-items: center;
-      gap: 5px;
-      width: 36px; height: 36px;
-      background: none; border: none; cursor: pointer;
-      padding: 4px; flex-shrink: 0;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--text-muted);
-      border-radius: 2px;
-      transition: all 0.25s ease;
-      transform-origin: center;
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--accent); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--accent); }
+  /* ---- Sections ---- */
+  section { position: relative; padding: 80px 0; }
+  .section-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--color-primary);
+    padding: 4px 10px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 4px;
+    margin-bottom: 18px;
+  }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 14px; max-width: 780px; }
+  .section-intro { color: var(--color-text-muted); max-width: 720px; font-size: 1.02rem; margin-bottom: 36px; }
 
-    /* mobile drawer */
-    .nav-drawer {
-      position: fixed; top: 56px; left: 0; right: 0;
-      background: rgba(14,15,17,0.98);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem 1.5rem;
-      z-index: 99;
-      display: flex; flex-direction: column; gap: 0;
-      transform: translateY(-6px);
-      opacity: 0;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      pointer-events: none;
-      visibility: hidden;
-    }
-    .nav-drawer.open {
-      opacity: 1; transform: translateY(0);
-      pointer-events: auto;
-      visibility: visible;
-    }
-    .nav-drawer a {
-      color: var(--text-muted); font-size: 1rem;
-      text-decoration: none; padding: 0.85rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: color 0.15s;
-      display: block;
-    }
-    .nav-drawer a:last-child { border-bottom: none; }
-    .nav-drawer a:hover { color: var(--accent); }
+  /* ---- Headline result ---- */
+  .headline-result {
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 56px 0;
+  }
+  .result-card {
+    padding: 36px;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, var(--color-primary-soft) 0%, transparent 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .result-stat {
+    text-align: center;
+    padding: 20px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+  .result-number {
+    font-family: var(--font-mono);
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    color: var(--color-gold);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .result-pvalue {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+  .result-label {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .result-text h3 { font-size: 1.4rem; margin-bottom: 12px; }
+  .result-caveat {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--color-warn);
+    background: var(--color-warn-soft);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.9rem;
+  }
+  .result-caveat .label {
+    display: block;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--color-warn); margin-bottom: 4px;
+  }
+  @media (max-width: 760px) {
+    .result-card { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
+  }
 
-    @media(max-width: 680px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-    }
+  /* ---- Summary (laymen's section) ---- */
+  .summary { }
+  .summary-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .summary-block {
+    padding: 26px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .summary-block:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+  .summary-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .summary-block h3 { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+  .summary-block p { color: var(--color-text-muted); font-size: 0.95rem; margin: 0 0 10px; }
+  .summary-block p:last-child { margin-bottom: 0; }
 
-    /* ─── HERO ─── */
-    .hero {
-      max-width: 860px; margin: 0 auto;
-      padding: 7rem 2rem 5rem;
-      text-align: center;
-    }
-    .hero-tag {
-      display: inline-block;
-      background: rgba(78,205,196,0.12);
-      color: var(--accent);
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      border: 1px solid rgba(78,205,196,0.25);
-      border-radius: 20px; padding: 0.3rem 0.9rem;
-      margin-bottom: 1.6rem;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 700; line-height: 1.18;
-      color: #fff; margin-bottom: 1.2rem;
-    }
-    .hero h1 span { color: var(--accent); }
-    .hero-subtitle {
-      font-size: 1.05rem; color: var(--text-muted);
-      max-width: 640px; margin: 0 auto 2.4rem;
-      line-height: 1.7;
-    }
-    .hero-buttons {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.65rem 1.4rem; border-radius: 8px;
-      font-size: 0.9rem; font-weight: 500;
-      text-decoration: none; transition: all 0.2s;
-    }
-    .btn-primary {
-      background: var(--accent); color: #0e0f11;
-    }
-    .btn-primary:hover { background: #3bb8b0; }
-    .btn-secondary {
-      background: var(--surface2); color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  /* ---- Status table ---- */
+  .status-section { background: var(--color-bg-alt); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .status-table {
+    width: 100%; border-collapse: collapse;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
+    margin-top: 24px;
+  }
+  .status-table th {
+    text-align: left;
+    padding: 14px 18px;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+  .status-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    vertical-align: middle;
+  }
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-table .area { color: var(--color-text); font-weight: 500; }
+  .status-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .status-pill.strong { background: var(--color-success-soft); color: var(--color-success); border: 1px solid rgba(74,222,128,0.4); }
+  .status-pill.partial { background: var(--color-gold-soft); color: var(--color-gold); border: 1px solid rgba(232,175,52,0.4); }
+  .status-pill.conditional { background: var(--color-gold-soft); color: var(--color-gold); border: 1px solid rgba(232,175,52,0.4); }
+  .status-pill.open { background: var(--color-warn-soft); color: var(--color-warn); border: 1px solid rgba(250,204,21,0.4); }
+  .status-table .note { color: var(--color-text-muted); font-size: 0.88rem; }
 
-    /* ─── STATS BAR ─── */
-    .stats-bar {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-      padding: 1.4rem 2rem;
-    }
-    .stats-inner {
-      max-width: 900px; margin: 0 auto;
-      display: flex; gap: 0; flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    .stat {
-      text-align: center; padding: 0.5rem 1.5rem;
-    }
-    .stat-val {
-      font-family: 'DM Mono', monospace;
-      font-size: 1.3rem; font-weight: 500;
-      color: var(--accent);
-    }
-    .stat-lbl {
-      font-size: 0.75rem; color: var(--text-muted);
-      margin-top: 0.2rem;
-    }
+  /* ---- Physics blocks ---- */
+  .physics-stack { display: flex; flex-direction: column; gap: 24px; margin-top: 36px; }
+  .physics-block {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    align-items: start;
+    transition: border-color var(--transition);
+  }
+  .physics-block:hover { border-color: var(--color-primary); }
+  .physics-number {
+    font-family: var(--font-mono);
+    font-size: 2.6rem;
+    color: var(--color-primary);
+    opacity: 0.35;
+    line-height: 1;
+  }
+  .physics-content h3 { font-size: 1.4rem; margin-bottom: 8px; }
+  .physics-lead {
+    font-size: 1rem;
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+  .physics-callout {
+    margin-top: 16px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--color-gold);
+    background: var(--color-gold-soft);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.92rem;
+  }
+  .physics-callout .label {
+    display: block;
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--color-gold); margin-bottom: 4px;
+  }
+  .equation-display {
+    padding: 16px;
+    margin: 14px 0;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    text-align: center;
+  }
+  .equation-display .katex { font-size: 1.08em; }
+  @media (max-width: 720px) {
+    .physics-block { grid-template-columns: 1fr; gap: 12px; padding: 22px; }
+    .physics-number { font-size: 2rem; }
+  }
 
-    /* ─── SECTION ─── */
-    .section {
-      max-width: 900px; margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-    .section-tag {
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-    .tag-tier1 { color: var(--tier1); }
-    .tag-tier2 { color: var(--tier2); }
-    .tag-neutral { color: var(--text-muted); }
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
-      font-weight: 600; color: #fff;
-      margin-bottom: 0.8rem; line-height: 1.25;
-    }
-    .section-lead {
-      font-size: 1rem; color: var(--text-muted);
-      max-width: 680px; margin-bottom: 3rem; line-height: 1.7;
-    }
+  /* ---- Equations ---- */
+  .equations { background: var(--color-bg-alt); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .eq-list { display: flex; flex-direction: column; gap: 18px; }
+  .eq-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+    padding: 24px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    align-items: center;
+    transition: border-color var(--transition);
+  }
+  .eq-row:hover { border-color: var(--color-primary); }
+  .eq-label { display: flex; flex-direction: column; gap: 4px; }
+  .eq-num {
+    display: inline-block; width: fit-content;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-primary);
+    padding: 3px 8px;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .eq-label h3 { font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .eq-label p { color: var(--color-text-muted); font-size: 0.92rem; margin: 0; }
+  .eq-box {
+    padding: 22px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    text-align: center;
+  }
+  @media (max-width: 860px) {
+    .eq-row { grid-template-columns: 1fr; gap: 16px; }
+  }
 
-    hr.divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 0;
-    }
+  /* ---- Tests ---- */
+  .tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 28px;
+  }
+  .test-card {
+    padding: 22px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    transition: border-color var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+  .test-card:hover { border-color: var(--color-primary); }
+  .test-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px; gap: 10px; flex-wrap: wrap;
+  }
+  .test-status {
+    display: inline-block;
+    padding: 4px 10px; border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.06em;
+  }
+  .test-status.strong { background: var(--color-success-soft); color: var(--color-success); border: 1px solid rgba(74,222,128,0.4); }
+  .test-status.partial { background: var(--color-gold-soft); color: var(--color-gold); border: 1px solid rgba(232,175,52,0.4); }
+  .test-status.conditional { background: var(--color-gold-soft); color: var(--color-gold); border: 1px solid rgba(232,175,52,0.4); }
+  .test-status.open { background: var(--color-warn-soft); color: var(--color-warn); border: 1px solid rgba(250,204,21,0.4); }
+  .test-domain {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-text-muted); letter-spacing: 0.04em;
+  }
+  .test-card h3 { font-family: var(--font-sans); font-size: 1.04rem; font-weight: 600; margin-bottom: 8px; }
+  .test-card p { color: var(--color-text-muted); font-size: 0.92rem; margin-bottom: 14px; flex: 1; }
+  .test-meta {
+    padding: 10px 12px;
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    border-left: 2px solid var(--color-primary);
+  }
+  .test-meta strong { color: var(--color-text); font-weight: 500; }
+  .test-meta .meta-row { display: block; }
 
-    /* ─── TIER EXPLAINER ─── */
-    .tier-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; margin-top: 2rem;
-    }
-    @media(max-width:640px){ .tier-grid { grid-template-columns: 1fr; } }
+  /* ---- Open / disclaimer ---- */
+  .open-section { background: var(--color-bg-alt); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .open-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+  .open-card {
+    padding: 22px;
+    border-left: 3px solid var(--color-warn);
+    background: var(--color-surface);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .open-card .q-tag {
+    display: inline-block;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--color-warn);
+    margin-bottom: 8px;
+  }
+  .open-card h4 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--color-text); }
+  .open-card p { font-size: 0.92rem; color: var(--color-text-muted); margin: 0; }
 
-    .tier-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 2rem;
-    }
-    .tier-card.tier1 { border-top: 3px solid var(--tier1); }
-    .tier-card.tier2 { border-top: 3px solid var(--tier2); }
-    .tier-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
-    .tier1 h3 { color: var(--tier1); }
-    .tier2 h3 { color: var(--tier2); }
-    .tier-card p {
-      font-size: 0.9rem; color: var(--text-muted);
-      line-height: 1.65; margin-bottom: 1rem;
-    }
-    .tier-list {
-      list-style: none; font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-    .tier-list li {
-      padding: 0.35rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: flex-start; gap: 0.6rem;
-    }
-    .tier-list li:last-child { border-bottom: none; }
-    .tier-list li::before {
-      content: '→'; color: var(--text-faint);
-      flex-shrink: 0; margin-top: 0.05rem;
-    }
+  /* ---- Disclaimers ---- */
+  .disclaimers {
+    margin-top: 32px;
+    padding: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+  .disclaimers h3 {
+    font-family: var(--font-sans); font-size: 0.92rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+  }
+  .disclaimers ul { list-style: none; padding: 0; }
+  .disclaimers li {
+    position: relative;
+    padding: 10px 0 10px 24px;
+    border-bottom: 1px dashed var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+  .disclaimers li:last-child { border-bottom: none; }
+  .disclaimers li::before {
+    content: '×'; position: absolute; left: 0; top: 9px;
+    color: var(--color-danger); font-weight: 700; font-size: 1.1rem;
+  }
+  .disclaimers li.do::before { content: '✓'; color: var(--color-success); }
 
-    /* ─── POSTULATES ─── */
-    .postulate-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-    @media(max-width:680px){ .postulate-grid { grid-template-columns: 1fr; } }
+  /* ---- Paper / earlier work ---- */
+  .paper { background: var(--color-bg); }
+  .paper-inner {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 36px;
+    padding: 36px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    align-items: center;
+  }
+  .paper-icon { width: 78px; }
+  .paper-text h2 { font-size: 1.5rem; margin-bottom: 10px; }
+  .paper-meta {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--color-text-muted);
+    margin: 14px 0 22px;
+  }
+  .paper-meta .dot { color: var(--color-text-faint); }
+  .paper-note {
+    font-size: 0.88rem; color: var(--color-text-muted);
+    font-style: italic; margin-top: 4px;
+  }
+  @media (max-width: 720px) {
+    .paper-inner { grid-template-columns: 1fr; padding: 26px; gap: 14px; }
+  }
 
-    .postulate-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 10px 10px 0;
-      padding: 1.5rem;
-    }
-    .postulate-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; font-weight: 500;
-      color: var(--accent); letter-spacing: 0.1em;
-      text-transform: uppercase; margin-bottom: 0.4rem;
-    }
-    .postulate-card h3 {
-      font-size: 0.95rem; font-weight: 600;
-      color: #fff; margin-bottom: 0.5rem;
-    }
-    .postulate-card p {
-      font-size: 0.85rem; color: var(--text-muted);
-      line-height: 1.6; margin-bottom: 0.8rem;
-    }
-    .postulate-gap {
-      font-size: 0.75rem; color: var(--tier2);
-      font-family: 'DM Mono', monospace;
-    }
+  /* ---- Feedback form ---- */
+  .feedback { background: var(--color-bg-alt); border-top: 1px solid var(--color-border); }
+  .feedback-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; margin-top: 28px; }
+  .feedback-form { padding: 30px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 13px; font-weight: 500; color: var(--color-text); letter-spacing: 0.02em; }
+  .form-group label .optional { color: var(--color-text-faint); font-weight: 400; }
+  .form-group label .required { color: var(--color-danger); }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 11px 14px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--color-primary); background: var(--color-surface-raised);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; font-family: var(--font-sans); }
+  .form-status { margin-top: 14px; font-size: 14px; min-height: 20px; }
+  .form-status.success { color: var(--color-success); }
+  .form-status.error { color: var(--color-danger); }
+  .btn .btn-spinner[hidden] { display: none; }
+  .btn .btn-spinner { display: inline-flex; }
+  .spin { animation: rotate 1s linear infinite; }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .feedback-aside h3 {
+    font-family: var(--font-sans); font-size: 1rem;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--color-text-muted); margin-bottom: 14px;
+  }
+  .label-legend { padding: 18px; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+  .label-legend h4 {
+    font-family: var(--font-sans); font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-text-muted); margin-bottom: 12px;
+  }
+  .legend-item { font-size: 12.5px; color: var(--color-text-muted); margin-bottom: 8px; line-height: 1.5; }
+  .badge {
+    display: inline-block; padding: 2px 8px;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.08em; border-radius: 3px;
+    margin-right: 4px;
+  }
+  .badge.strong { background: var(--color-success-soft); color: var(--color-success); border: 1px solid rgba(74,222,128,0.4); }
+  .badge.partial { background: var(--color-gold-soft); color: var(--color-gold); border: 1px solid rgba(232,175,52,0.4); }
+  .badge.open { background: var(--color-warn-soft); color: var(--color-warn); border: 1px solid rgba(250,204,21,0.4); }
+  @media (max-width: 860px) {
+    .feedback-inner { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
 
-    /* ─── EQUATIONS ─── */
-    .eq-grid {
-      display: flex; flex-direction: column; gap: 1rem;
-    }
-    .eq-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.4rem 1.8rem;
-      display: flex; align-items: center; gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .eq-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; color: var(--accent);
-      letter-spacing: 0.08em; text-transform: uppercase;
-      white-space: nowrap; min-width: 80px;
-    }
-    .eq-math {
-      flex: 1; min-width: 200px;
-      font-size: 0.95rem;
-    }
-    .eq-desc {
-      font-size: 0.82rem; color: var(--text-muted);
-      min-width: 160px; max-width: 220px;
-      line-height: 1.5;
-    }
+  /* ---- Footer ---- */
+  .site-footer { background: var(--color-bg); border-top: 1px solid var(--color-border); padding: 50px 0 22px; color: var(--color-text-muted); }
+  .footer-inner { display: grid; grid-template-columns: 1.3fr 2fr; gap: 36px; margin-bottom: 36px; }
+  .footer-brand { max-width: 340px; }
+  .footer-brand p { font-size: 14px; margin-top: 12px; }
+  .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .footer-nav h4 {
+    font-family: var(--font-sans); font-size: 13px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-text-strong); margin-bottom: 12px;
+  }
+  .footer-nav ul { list-style: none; padding: 0; }
+  .footer-nav li { margin-bottom: 8px; }
+  .footer-nav a { color: var(--color-text-muted); font-size: 14px; }
+  .footer-nav a:hover { color: var(--color-primary); }
+  .footer-bottom {
+    padding-top: 22px; border-top: 1px solid var(--color-border);
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 12px;
+  }
+  .footer-disclaimer { color: var(--color-text-faint); max-width: 540px; }
+  @media (max-width: 720px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-nav { grid-template-columns: repeat(2, 1fr); }
+  }
 
-    /* ─── STATUS TABLE ─── */
-    .status-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 0.88rem;
-    }
-    .status-table th {
-      background: var(--surface2);
-      color: var(--text-muted); font-weight: 500;
-      font-size: 0.75rem; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.7rem 1rem; text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-    .status-table td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-    .status-table tr:last-child td { border-bottom: none; }
-    .status-table tr:hover td { background: rgba(255,255,255,0.02); }
+  ::selection { background: var(--color-primary); color: #04212a; }
+  [data-theme="light"] ::selection { background: var(--color-primary); color: #ffffff; }
 
-    .badge {
-      display: inline-block;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.2rem 0.6rem; border-radius: 4px;
-      white-space: nowrap;
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
-    .badge-confirmed  { background: rgba(74,222,128,0.12); color: var(--confirmed); border: 1px solid rgba(74,222,128,0.25); }
-    .badge-consistent { background: rgba(250,204,21,0.1);  color: var(--consistent); border: 1px solid rgba(250,204,21,0.25); }
-    .badge-open       { background: rgba(248,113,113,0.1); color: var(--open); border: 1px solid rgba(248,113,113,0.25); }
-    .badge-tier2      { background: rgba(167,139,250,0.1); color: var(--tier2); border: 1px solid rgba(167,139,250,0.25); }
-
-    /* ─── TIER 2 GAPS ─── */
-    .gap-list {
-      display: flex; flex-direction: column; gap: 1rem;
-    }
-    .gap-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--tier2);
-      border-radius: 0 10px 10px 0;
-      padding: 1.3rem 1.6rem;
-      display: grid; grid-template-columns: 48px 1fr; gap: 1rem;
-      align-items: start;
-    }
-    .gap-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 1.2rem; font-weight: 500;
-      color: var(--tier2); line-height: 1;
-      padding-top: 0.2rem;
-    }
-    .gap-card h3 {
-      font-size: 0.95rem; font-weight: 600;
-      color: #fff; margin-bottom: 0.35rem;
-    }
-    .gap-card p {
-      font-size: 0.84rem; color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ─── STABILITY ─── */
-    .stability-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
-      gap: 1rem;
-    }
-    .stability-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.2rem 1.4rem;
-    }
-    .stability-card .s-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem; color: var(--tier1);
-      letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 0.35rem;
-    }
-    .stability-card h3 {
-      font-size: 0.9rem; font-weight: 600; color: #fff;
-      margin-bottom: 0.4rem;
-    }
-    .stability-card p {
-      font-size: 0.8rem; color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* ─── OBSERVATIONAL ─── */
-    .obs-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
-      gap: 1rem;
-    }
-    .obs-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.3rem;
-    }
-    .obs-card .obs-domain {
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.35rem;
-    }
-    .obs-card h3 {
-      font-size: 0.9rem; font-weight: 600; color: #fff;
-      margin-bottom: 0.3rem;
-    }
-    .obs-card .obs-result {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.8rem; color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    /* ─── NUMBERS ─── */
-    .numbers-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-      gap: 1rem;
-    }
-    .number-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.3rem;
-      text-align: center;
-    }
-    .number-card .num-val {
-      font-family: 'DM Mono', monospace;
-      font-size: 1.05rem; color: var(--accent);
-      word-break: break-all; margin-bottom: 0.35rem;
-    }
-    .number-card .num-label {
-      font-size: 0.78rem; color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* ─── ABSTRACT BOX ─── */
-    .abstract-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px; padding: 2rem 2.4rem;
-      font-size: 0.9rem; color: var(--text-muted);
-      line-height: 1.75;
-    }
-    .abstract-box strong { color: var(--text); }
-
-    /* ─── AUTHOR / VERSION ─── */
-    .meta-bar {
-      display: flex; align-items: center; gap: 1.5rem;
-      flex-wrap: wrap;
-      font-size: 0.8rem; color: var(--text-muted);
-      margin-bottom: 2.5rem;
-    }
-    .meta-bar span { display: flex; align-items: center; gap: 0.35rem; }
-    .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-faint); }
-
-    /* ─── FOOTER ─── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      font-size: 0.8rem; color: var(--text-faint);
-    }
-    footer a { color: var(--text-muted); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
-
-    /* ─── UTILITIES ─── */
-    .mono { font-family: 'DM Mono', monospace; }
-    .mt-2 { margin-top: 2rem; }
-    .mt-3 { margin-top: 3rem; }
-    .text-accent { color: var(--accent); }
-    .text-tier2 { color: var(--tier2); }
-    .text-muted { color: var(--text-muted); }
-
-    /* KaTeX overrides */
-    .katex { font-size: 1em; }
+  }
   </style>
 </head>
 <body>
 
-<!-- ══════════════ NAV ══════════════ -->
-<nav>
-  <a href="#" class="nav-brand">Vacuum Gravity Theory</a>
-  <ul class="nav-links">
-    <li><a href="#what">What is GAP</a></li>
-    <li><a href="#postulates">Postulates</a></li>
-    <li><a href="#tier1">Tier 1</a></li>
-    <li><a href="#tier2">Tier 2</a></li>
-    <li><a href="#predictions">Predictions</a></li>
-    <li><a href="#paper">Paper</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<!-- ============================ NAV ============================= -->
+<header class="site-header" id="top">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a href="#top" class="nav-logo" aria-label="Vacuum Gravity Theory — home">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
+        <circle cx="18" cy="18" r="5.5" fill="currentColor"/>
+        <line x1="18" y1="2" x2="18" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="18" y1="27" x2="18" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="2" y1="18" x2="9" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="11" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+      </svg>
+      <span class="nav-wordmark">VGT</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#headline">Result</a></li>
+      <li><a href="#status">Status</a></li>
+      <li><a href="#physics">Physics</a></li>
+      <li><a href="#equations">Equations</a></li>
+      <li><a href="#tests">Tests</a></li>
+      <li><a href="#open">Open</a></li>
+    </ul>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+    <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" id="mobile-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#summary" class="mobile-link">Summary</a></li>
+      <li><a href="#headline" class="mobile-link">Headline result</a></li>
+      <li><a href="#status" class="mobile-link">Where it stands</a></li>
+      <li><a href="#physics" class="mobile-link">The physics</a></li>
+      <li><a href="#equations" class="mobile-link">Equations</a></li>
+      <li><a href="#tests" class="mobile-link">Tests &amp; evidence</a></li>
+      <li><a href="#open" class="mobile-link">Open problems</a></li>
+      <li><a href="#feedback" class="mobile-link">Feedback</a></li>
+    </ul>
+  </div>
+</header>
 
-<!-- Mobile drawer -->
-<div class="nav-drawer" id="nav-drawer">
-  <a href="#what" onclick="closeDrawer()">What is GAP</a>
-  <a href="#postulates" onclick="closeDrawer()">Postulates</a>
-  <a href="#tier1" onclick="closeDrawer()">Tier 1</a>
-  <a href="#tier2" onclick="closeDrawer()">Tier 2</a>
-  <a href="#predictions" onclick="closeDrawer()">Predictions</a>
-  <a href="#paper" onclick="closeDrawer()">Paper</a>
-</div>
+<!-- ============================ HERO ============================= -->
+<section class="hero" id="hero">
+  <div class="hero-bg"><div class="hero-glow" aria-hidden="true"></div></div>
+  <div class="hero-content">
+    <div class="hero-badge">Coherence Phase Model</div>
+    <h1 class="hero-title">
+      Gravity from a<br/>
+      <span class="accent">coherent vacuum phase</span>
+    </h1>
+    <p class="hero-subtitle">
+      A framework in which the quantum vacuum behaves like a phase-ordered medium.
+      Where the vacuum is coherent, gravity appears enhanced — matching galaxy rotation curves
+      without dark matter. Where it's not, gravity behaves normally — and clusters look as they do.
+    </p>
+    <div class="hero-headline-claim">
+      <span class="label">Headline claim</span>
+      A coherence-based phase model appears to organize dark-matter-like behavior across galaxies,
+      groups, and clusters using a single physical variable: <em>ρ/σ³</em>.
+    </div>
+    <div class="hero-cta-row">
+      <a href="#headline" class="btn btn-primary">See the strongest result</a>
+      <a href="#summary" class="btn btn-ghost">Summary in plain English</a>
+    </div>
+  </div>
 
-<script>
-  const btn = document.getElementById('hamburger');
-  const drawer = document.getElementById('nav-drawer');
-  function closeDrawer() {
-    btn.classList.remove('open');
-    drawer.classList.remove('open');
-  }
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('open');
-    drawer.classList.toggle('open');
-  });
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!btn.contains(e.target) && !drawer.contains(e.target)) closeDrawer();
-  });
-</script>
+  <div class="hero-diagram" aria-label="Coherence phase diagram: ρ/σ³ axis with two phases separated by a threshold">
+    <svg class="phase-svg" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="cohgrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#4fb8c4" stop-opacity="0.05"/>
+          <stop offset="48%" stop-color="#4fb8c4" stop-opacity="0.35"/>
+          <stop offset="52%" stop-color="#e8af34" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#e8af34" stop-opacity="0.05"/>
+        </linearGradient>
+      </defs>
+      <rect x="40" y="60" width="400" height="220" fill="url(#cohgrad)" stroke="none"/>
 
-<!-- ══════════════ HERO ══════════════ -->
-<section class="hero">
-  <div class="hero-tag">v40 · Presentation-Hardened Closed Effective Extension of GR</div>
-  <h1>
-    Gravity from the<br>
-    <span>Quantum Vacuum</span>
-  </h1>
-  <p class="hero-subtitle">
-    GAP is a closed effective extension of general relativity in which gravity couples not to absolute vacuum energy, but to <em>modular vacuum response</em>. No system-dependent free parameters. No dark matter particles. No new forces.
-  </p>
-  <div class="hero-buttons">
-    <a href="#paper" class="btn btn-primary">Read the Paper</a>
-    <a href="#tier1" class="btn btn-secondary">Tier 1 vs Tier 2 →</a>
+      <!-- Threshold line -->
+      <line x1="240" y1="50" x2="240" y2="290" stroke="#e6e8ec" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.7"/>
+      <text x="240" y="44" fill="#e6e8ec" font-family="DM Mono, monospace" font-size="11" text-anchor="middle">C_coh = 1</text>
+
+      <!-- Axis -->
+      <line x1="40" y1="290" x2="440" y2="290" stroke="#8b96a5" stroke-width="1"/>
+      <text x="240" y="320" fill="#8b96a5" font-family="DM Mono, monospace" font-size="11" text-anchor="middle">phase variable C_coh = n · λ_dB³</text>
+      <text x="40" y="340" fill="#4fb8c4" font-family="DM Mono, monospace" font-size="10" text-anchor="start">low ρ/σ³</text>
+      <text x="440" y="340" fill="#e8af34" font-family="DM Mono, monospace" font-size="10" text-anchor="end">high ρ/σ³</text>
+
+      <!-- Phase labels -->
+      <text x="100" y="100" fill="#4fb8c4" font-family="DM Sans, sans-serif" font-size="14" font-weight="600">Normal phase</text>
+      <text x="100" y="118" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10">CDM-like behavior</text>
+      <text x="100" y="132" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10">→ clusters</text>
+
+      <text x="380" y="100" fill="#e8af34" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" text-anchor="end">Coherent phase</text>
+      <text x="380" y="118" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10" text-anchor="end">MOND-like behavior</text>
+      <text x="380" y="132" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10" text-anchor="end">→ galaxies</text>
+
+      <!-- Sample dots: galaxies on right, clusters on left, groups straddling -->
+      <g>
+        <!-- Cluster dots (left, low coherence) -->
+        <circle cx="80" cy="170" r="4" fill="#4fb8c4"/>
+        <circle cx="105" cy="195" r="4" fill="#4fb8c4"/>
+        <circle cx="130" cy="180" r="4" fill="#4fb8c4"/>
+        <circle cx="155" cy="210" r="4" fill="#4fb8c4"/>
+        <circle cx="180" cy="190" r="4" fill="#4fb8c4"/>
+        <text x="120" y="240" fill="#4fb8c4" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">clusters</text>
+
+        <!-- Group dots (straddling threshold) -->
+        <circle cx="215" cy="200" r="4" fill="#e6e8ec" opacity="0.7"/>
+        <circle cx="235" cy="180" r="4" fill="#e6e8ec" opacity="0.7"/>
+        <circle cx="255" cy="195" r="4" fill="#e6e8ec" opacity="0.7"/>
+        <circle cx="270" cy="175" r="4" fill="#e6e8ec" opacity="0.7"/>
+        <text x="245" y="240" fill="#e6e8ec" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">groups</text>
+
+        <!-- Galaxy dots (right, high coherence) -->
+        <circle cx="305" cy="195" r="4" fill="#e8af34"/>
+        <circle cx="335" cy="170" r="4" fill="#e8af34"/>
+        <circle cx="360" cy="200" r="4" fill="#e8af34"/>
+        <circle cx="385" cy="180" r="4" fill="#e8af34"/>
+        <circle cx="410" cy="190" r="4" fill="#e8af34"/>
+        <text x="360" y="240" fill="#e8af34" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">galaxies</text>
+      </g>
+    </svg>
   </div>
 </section>
 
-<!-- ══════════════ STATS ══════════════ -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat">
-      <div class="stat-val">0</div>
-      <div class="stat-lbl">Free Parameters</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">175</div>
-      <div class="stat-lbl">SPARC Galaxies Fit</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">6/6</div>
-      <div class="stat-lbl">A1689 Lensing Bins</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">0.11%</div>
-      <div class="stat-lbl">Ω<sub>Λ</sub> vs DESI</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">c<sub>gw</sub> = c</div>
-      <div class="stat-lbl">GW Speed (exact)</div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">4</div>
-      <div class="stat-lbl">Named Postulates</div>
-    </div>
-  </div>
-</div>
+<!-- ============================ SUMMARY ============================= -->
+<section class="summary" id="summary">
+  <div class="container">
+    <div class="section-tag">Summary</div>
+    <h2 class="section-title">In plain English</h2>
+    <p class="section-intro">
+      For decades, physics has assumed the universe is filled with invisible "dark matter" to explain why
+      galaxies rotate the way they do. This theory takes a different approach: <em>what if gravity itself
+      changes depending on the environment — because it emerges from the vacuum?</em>
+    </p>
 
-<!-- ══════════════ WHAT IS GAP ══════════════ -->
-<div id="what">
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-neutral">Overview</div>
-  <h2>What is GAP Theory?</h2>
-  <p class="section-lead">
-    GAP (Gradient-Activated Pressure) is a covariant, zero-free-parameter extension of Einstein's general relativity. It introduces a single new scalar field &Xi; — the <em>modular vacuum susceptibility</em> — that responds to gradients of the baryonic stress-energy tensor rather than to absolute vacuum energy.
-  </p>
+    <div class="summary-blocks">
 
-  <div class="abstract-box">
-    <strong>Core idea.</strong> The cosmological constant problem asks: why doesn't the enormous vacuum energy of quantum field theory gravitate? GAP answers this by postulating that gravity couples not to the absolute vacuum energy density, but only to its <em>modular response</em> — the differential susceptibility of the vacuum to baryonic stress gradients. This single shift produces MOND-like galaxy rotation without dark matter, replaces dark energy with a vacuum polarization mechanism, and yields exact analytic predictions for the BTFR, RAR, CMB sound horizon, and the cosmological constant — all from first principles, with no system-dependent free parameters.
-    <br><br>
-    <strong>Status (v40).</strong> GAP is a <em>Tier 1 closed theory</em>: a self-consistent effective extension of GR with a complete covariant action, four explicitly named postulates, a full Tier 1 stability certificate (S1–S7), and honest labeling of what is derived, what is conditional, and what remains open for a deeper Tier 2 quantum gravity program. v40 applies 10-item presentation hardening on top of v39: (1)&nbsp;"no system-dependent free parameters" replaces "zero free parameters" throughout; (2)&nbsp;A2029 calibration explicitly reconciled with the action-derived value G/4; (3)&nbsp;Bullet Cluster tone rewritten from apologetic to controlled; (4)&nbsp;Euclidean bridge safety sentence added; (5)&nbsp;"derived within the effective modular framework" replaces "derived exactly" in high-visibility claims; (6)&nbsp;Xi energy budget equation ∫ρ_Ξ dV ≲ O(M_b) displayed explicitly; (7)&nbsp;abstract "all sectors consistent" language tightened. v39 applied 11-item reviewer hardening: acceleration regime map (\(\varepsilon \equiv g_b/a_0\)) with three named physical regimes; explicit "3 equations define Tier 1" framing; standalone Section 9.4 establishing that \(\rho_\Xi = \mathcal{F}[\rho_b]\) is not an independent dark matter component; Bullet Cluster reframed as "defined Tier 1 stress test, not a completed success"; GW/Xi stability summary (\(c_{\rm gw}=c\), \(Z_\Xi>0\), \(m_\Xi^2>0\), \(\tau_\Xi>0\)); and three new conclusion subsections: GAP vs. ΛCDM structural comparison, Limitations &amp; Tier 2 program, and a four-criterion falsifiability statement.
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ TIER EXPLAINER ══════════════ -->
-<div id="tier1">
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-neutral">Program Structure</div>
-  <h2>Tier 1 and Tier 2 — What They Mean</h2>
-  <p class="section-lead">
-    GAP is organized into two tiers of closure. This is not a hierarchy of confidence — both tiers contain rigorous physics. The distinction is about <em>what the theory derives from what</em>.
-  </p>
-
-  <div class="tier-grid">
-    <!-- TIER 1 -->
-    <div class="tier-card tier1">
-      <h3>Tier 1 — Closed Effective Theory</h3>
-      <p>
-        Tier 1 is the complete, self-consistent theory today. It consists of a single covariant action, four explicitly named postulates (P1–P4), and all predictions derived from them. The postulates are honest axioms — physically motivated, falsifiable, and consistent with every observational test.
-      </p>
-      <p>
-        Tier 1 is <strong>closed</strong>: given the postulates, every result follows analytically. There are no hidden assumptions, no adjustable parameters, and no appeals to numerical fitting.
-      </p>
-      <ul class="tier-list">
-        <li>Covariant action + field equations (Section 3)</li>
-        <li>Four named postulates P1–P4</li>
-        <li>Galaxy rotation / RAR / BTFR (derived, not fit)</li>
-        <li>Cosmological vacuum energy &rho;<sub>&Lambda;</sub> (conditional on P1)</li>
-        <li>CMB sound horizon, f&sigma;<sub>8</sub>, GW speed</li>
-        <li>Lensing: RAR + A1689 blind test 6/6</li>
-        <li>Stability certificate S1–S7 (Section 14.5)</li>
-        <li>Non-equilibrium &Xi; dynamics for clusters</li>
-      </ul>
-    </div>
-
-    <!-- TIER 2 -->
-    <div class="tier-card tier2">
-      <h3>Tier 2 — Quantum Gravity Program</h3>
-      <p>
-        Tier 2 is the open research program to <em>derive</em> the four postulates P1–P4 from a microscopic quantum gravity theory. None of the Tier 2 gaps affect the validity of Tier 1 predictions — they are the next layer of foundational depth.
-      </p>
-      <p>
-        Tier 2 is <strong>defined</strong>: every gap is precisely stated as a mathematical problem, not a vague aspiration. The gaps are honest about what is not yet known.
-      </p>
-      <ul class="tier-list">
-        <li>Gap 1: Derive P1 from diffeomorphism invariance / QG</li>
-        <li>Gap 2: Exact Fisher normalization G<sub>&eta;&eta;</sub> = 1</li>
-        <li>Gap 3: Gradient–Modular Correspondence from modular generator</li>
-        <li>Gap 4: Derive &Ocirc;<sub>grad</sub> from QFT / horizon DOF</li>
-        <li>Gap 5: Derive &tau;<sub>&Xi;</sub>, m<sub>&Xi;</sub>, S<sub>&Xi;</sub> from modular spectrum</li>
-        <li>Gap 6: Full nonlinear stability proof</li>
-        <li>Gap 7: Bullet Cluster — retarded &Xi; + lensing convergence &kappa;(x,y)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- CLARIFYING NOTE -->
-  <div class="abstract-box mt-2" style="border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0;">
-    <strong>Why this distinction matters.</strong> Many modified gravity theories present postulates without labeling them as such, then claim full derivation. GAP does the opposite: every axiom is explicitly named, every gap is honestly catalogued, and every prediction is labeled CONFIRMED, CONSISTENT, or OPEN. The Tier 1 / Tier 2 split is a commitment to intellectual honesty — not a disclaimer.
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ POSTULATES ══════════════ -->
-<div id="postulates">
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier1">Tier 1 Foundation</div>
-  <h2>The Four Named Postulates</h2>
-  <p class="section-lead">
-    GAP rests on four explicitly named postulates. These are honest axioms — not hidden assumptions. Each is physically motivated, falsifiable, and consistent with all observational tests. A Tier 2 program to derive each from quantum gravity is defined in Section 15.3 of the paper.
-  </p>
-
-  <div class="postulate-grid">
-    <!-- P1 -->
-    <div class="postulate-card">
-      <div class="postulate-label">P1</div>
-      <h3>No Absolute Vacuum Charge</h3>
-      <p>Gravity couples only to the <em>differential</em> vacuum response — background vacuum energy does not gravitate. The gravitational source is background-subtracted.</p>
-      <div style="margin: 0.8rem 0; overflow-x: auto;">
-        \[ \Delta T^{\Xi}_{\mu\nu} = T^{\Xi}_{\mu\nu}[g,\Xi] - T^{\Xi}_{\mu\nu}[g_{\rm ref},\Xi_0] \]
+      <div class="summary-block">
+        <div class="summary-num">01</div>
+        <h3>What this is about</h3>
+        <p>Instead of adding unseen matter, the theory says the vacuum of space behaves like a physical medium. Under
+          the right conditions it forms a <em>coherent state</em> — like a superfluid. In that state, gravity appears
+          stronger, matching galaxy rotation curves. In other conditions, the vacuum behaves normally, and gravity
+          looks like the cluster-scale gravity we measure.</p>
       </div>
-      <div class="postulate-gap">→ Tier 2 Gap 1: derive from diffeomorphism invariance</div>
-    </div>
 
-    <!-- P2 -->
-    <div class="postulate-card">
-      <div class="postulate-label">P2</div>
-      <h3>Horizon Modular Susceptibility</h3>
-      <p>The &Xi; field is the boundary modular susceptibility of the vacuum to baryonic gradient intensity. It lives on the causal horizon and encodes the vacuum response to local matter gradients.</p>
-      <div style="margin: 0.8rem 0; overflow-x: auto;">
-        \[ \Xi = d_{\rm eff} \ln \mathcal{Z}_{\rm vac}[\hat{O}_{\rm grad}] \]
+      <div class="summary-block">
+        <div class="summary-num">02</div>
+        <h3>Where we started</h3>
+        <p>Galaxies follow a precise law (the Radial Acceleration Relation) connecting visible matter to gravity. It
+          is extremely consistent — and difficult to explain with standard dark-matter halos. We asked the question:
+          <em>can this law be derived from physics, instead of just fitted?</em></p>
       </div>
-      <div class="postulate-gap">→ Tier 2 Gap 2: derive d<sub>eff</sub> = 1 from QG</div>
-    </div>
 
-    <!-- P3 -->
-    <div class="postulate-card">
-      <div class="postulate-label">P3</div>
-      <h3>Gradient–Modular Correspondence</h3>
-      <p>The modular optical depth &tau; is set by the ratio of the local gravitational acceleration to the critical acceleration a<sub>0</sub>. This is the bridge between MOND phenomenology and modular structure.</p>
-      <div style="margin: 0.8rem 0; overflow-x: auto;">
-        \[ \tau = \sqrt{g_b / a_0} \]
+      <div class="summary-block">
+        <div class="summary-num">03</div>
+        <h3>What we have</h3>
+        <p>A model where (i) the galaxy law is derived from quantum statistics and horizon physics, not assumed;
+          (ii) the universe has two phases — coherent (galaxies) and normal (clusters); (iii) galaxy groups, sitting
+          between, reveal the transition; and (iv) the phase-ordering variable <em>ρ/σ³</em> sorts systems in the
+          right direction across all three scales.</p>
       </div>
-      <div class="postulate-gap">→ Tier 2 Gap 3: derive from modular generator (most tractable)</div>
-    </div>
 
-    <!-- P4 -->
-    <div class="postulate-card">
-      <div class="postulate-label">P4</div>
-      <h3>Self-Consistent Vacuum Polarization</h3>
-      <p>The observed acceleration is the baryonic acceleration amplified by a vacuum polarization factor. The interpolating function &nu;(x) follows analytically from P2 and P3 with no free function.</p>
-      <div style="margin: 0.8rem 0; overflow-x: auto;">
-        \[ g_{\rm obs} = \nu\!\left(\frac{g_b}{a_0}\right) g_b, \quad \nu(x) = \frac{1}{1-e^{-\sqrt{x}}} \]
+      <div class="summary-block">
+        <div class="summary-num">04</div>
+        <h3>Environment matters</h3>
+        <p>Two physical effects shape behavior. <em>Formation</em>: dense, calm systems can enter the coherent phase;
+          disturbed environments (lower density, higher motion) prevent it from forming. <em>Survival</em>: even where
+          the phase forms, strong tidal forces can disrupt it. Both are partially derived and physically plausible.</p>
       </div>
-      <div class="postulate-gap">→ Will be resolved when P2 and P3 are derived from QG</div>
+
+      <div class="summary-block">
+        <div class="summary-num">05</div>
+        <h3>Lensing supports it</h3>
+        <p>Gravitational lensing tests don't depend on velocity measurements. Stacked KiDS+GAMA group lensing shows
+          systems with higher predicted coherence behave more like galaxies, while lower-coherence systems behave more
+          like dark-matter-dominated clusters — independent confirmation of the direction.</p>
+      </div>
+
+      <div class="summary-block">
+        <div class="summary-num">06</div>
+        <h3>What's left to prove</h3>
+        <p>This is not a finished theory. The vacuum response kernel is not fully derived from first principles;
+          c<sub>s</sub> and the EFT need to be self-consistent; and the threshold needs to be validated cleanly across
+          the galaxy → group → cluster ladder using only systems with directly measured velocity dispersions. The
+          framework is promising; it is not yet proven.</p>
+      </div>
+
     </div>
   </div>
-</div>
-</div>
+</section>
 
-<!-- ══════════════ CORE EQUATIONS ══════════════ -->
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier1">Tier 1 — Locked Core</div>
-  <h2>Six Core Equations</h2>
-  <p class="section-lead">
-    These six equations constitute the locked core of GAP theory. All follow analytically from P1–P4. No fitting, no free parameters.
-  </p>
+<!-- ============================ HEADLINE RESULT ============================= -->
+<section class="headline-result" id="headline">
+  <div class="container">
+    <div class="section-tag">Strongest single result</div>
+    <h2 class="section-title">Galaxies, groups, and clusters in the right order</h2>
+    <p class="section-intro">
+      A directional Spearman correlation between the model's coherence variable and the observed mass excess
+      (lensing mass / baryonic mass) — measured across galaxies, groups, and clusters in a single ladder.
+    </p>
 
-  <div class="eq-grid">
-    <div class="eq-card">
-      <div class="eq-label">Core 1</div>
-      <div class="eq-math">\( G_{\mu\nu} = \dfrac{8\pi G}{c^4}\!\left(T^{\rm matter}_{\mu\nu} + \Delta T^{\Xi}_{\mu\nu}\right) \)</div>
-      <div class="eq-desc">Main field equation — GR with background-subtracted vacuum source</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">Core 2</div>
-      <div class="eq-math">\( \Delta T^{\Xi}_{\mu\nu} = T^{\Xi}_{\mu\nu}[g,\Xi] - T^{\Xi}_{\mu\nu}[g_{\rm ref},\Xi_0] \)</div>
-      <div class="eq-desc">Vacuum source — differential response only (Postulate P1)</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">Core 3</div>
-      <div class="eq-math">\( g_{\rm obs} = \dfrac{g_b}{1 - e^{-\sqrt{g_b/a_0}}} \)</div>
-      <div class="eq-desc">Static galaxy limit — full interpolation from deep-MOND to Newtonian</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">Core 4</div>
-      <div class="eq-math">\( g_{\rm obs} \;\xrightarrow{g_b \ll a_0}\; \sqrt{a_0\, g_b} \)</div>
-      <div class="eq-desc">Deep-MOND limit — derived, not postulated</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">Core 5</div>
-      <div class="eq-math">\( V_f^4 = G M_b \cdot a_0 \)</div>
-      <div class="eq-desc">Baryonic Tully–Fisher Relation — exact analytic consequence of P3</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">Core 6</div>
-      <div class="eq-math">\( a_0 = c H_0 \sqrt{\dfrac{6\,\Omega_\Lambda}{4\pi^3}} \)</div>
-      <div class="eq-desc">Cosmological bridge — links galaxy and cosmic scales</div>
+    <div class="result-card">
+      <div class="result-stat">
+        <div class="result-number">−0.94</div>
+        <div class="result-pvalue">p = 7 × 10⁻¹⁰</div>
+        <div class="result-label">Spearman ρ<sub>S</sub>(log C, log M<sub>excess</sub>)</div>
+      </div>
+      <div class="result-text">
+        <h3>Directional ladder validation: strong pass</h3>
+        <p>The phase-ordering variable orders systems in the expected direction across the entire mass ladder. High-coherence
+          systems appear MOND-like; low-coherence systems appear dark-matter-dominated. The <em>direction</em> is robust;
+          the strongest separation is between galaxies and clusters, with a mixed transition regime in groups.</p>
+        <div class="result-caveat">
+          <span class="label">Honest caveat</span>
+          The galaxy σ proxy is not directly measured for every point. The boundary result is strong but not final. The next
+          step is to repeat this ladder using only systems with direct spectroscopic σ or rotation-derived velocity-dispersion
+          proxies, and check whether the AUC stays high.
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══════════════ KEY NUMBERS ══════════════ -->
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier1">Zero Free Parameters</div>
-  <h2>All Numbers Are Derived</h2>
-  <p class="section-lead">
-    Every numerical constant in GAP follows from the field equations and postulates. None are fit to data.
-  </p>
+<!-- ============================ STATUS TABLE ============================= -->
+<section class="status-section" id="status">
+  <div class="container">
+    <div class="section-tag">Where it stands</div>
+    <h2 class="section-title">Honest status, area by area</h2>
+    <p class="section-intro">
+      Each row gives a calibrated verdict — strong pass, partial pass, conditional, or open. We have not "proven the
+      theory." Current evidence supports the phase-boundary picture, with the strongest separation between galaxies and
+      clusters and a mixed transition in groups.
+    </p>
 
-  <div class="numbers-grid">
-    <div class="number-card">
-      <div class="num-val">1.2059 × 10⁻¹⁰ m/s²</div>
-      <div class="num-label">a<sub>0</sub> — MOND critical acceleration (derived from vacuum EOS)</div>
-    </div>
-    <div class="number-card">
-      <div class="num-val">3 / (4π²)</div>
-      <div class="num-label">&alpha;<sub>g</sub> = 0.07599 — coupling constant (exact, from action normalization)</div>
-    </div>
-    <div class="number-card">
-      <div class="num-val">4.823 × 10⁻²⁹ kg/m³</div>
-      <div class="num-label">&epsilon;<sub>⋆</sub> — vacuum energy density scale (derived)</div>
-    </div>
-    <div class="number-card">
-      <div class="num-val">4π³ · ε<sub>⋆</sub></div>
-      <div class="num-label">&rho;<sub>&Lambda;</sub> — dark energy density (Euclidean bridge, conditional on P1)</div>
-    </div>
-    <div class="number-card">
-      <div class="num-val">0.6928</div>
-      <div class="num-label">&Omega;<sub>&Lambda;</sub> — dark energy fraction (0.11% from DESI 2024 DR1 = 0.692)</div>
-    </div>
-    <div class="number-card">
-      <div class="num-val">78.8 Gyr</div>
-      <div class="num-label">&tau;<sub>&Xi;</sub> = c/a<sub>0</sub> — vacuum response timescale</div>
-    </div>
-  </div>
-</div>
+    <table class="status-table" role="table">
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Status</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="area">Galaxy / RAR behavior</td>
+          <td><span class="status-pill strong">Strong</span></td>
+          <td class="note">RAR structurally reproduced from Bose statistics + horizon temperatures.</td>
+        </tr>
+        <tr>
+          <td class="area">Group radial phase behavior</td>
+          <td><span class="status-pill conditional">Conditional pass</span></td>
+          <td class="note">Strongest in isolated groups (64% inner C_coh &gt; 1 vs 22% embedded; p ≈ 0.03).</td>
+        </tr>
+        <tr>
+          <td class="area">Environmental suppression</td>
+          <td><span class="status-pill partial">Partial</span></td>
+          <td class="note">Two-stage formation+survival model is partially derived and physically plausible.</td>
+        </tr>
+        <tr>
+          <td class="area">Galaxy → group → cluster ordering</td>
+          <td><span class="status-pill strong">Strong pass</span></td>
+          <td class="note">ρ<sub>S</sub>(log C, log M<sub>excess</sub>) = −0.94 (p = 7 × 10⁻¹⁰) across the full ladder.</td>
+        </tr>
+        <tr>
+          <td class="area">Frozen m = 5 eV threshold</td>
+          <td><span class="status-pill partial">Partial pass</span></td>
+          <td class="note">Threshold consistent with data, not yet validated cleanly across the entire ladder.</td>
+        </tr>
+        <tr>
+          <td class="area">Full first-principles derivation</td>
+          <td><span class="status-pill open">Open</span></td>
+          <td class="note">Vacuum response kernel and c<sub>s</sub> still need to be derived self-consistently.</td>
+        </tr>
+      </tbody>
+    </table>
 
-<!-- ══════════════ OBSERVATIONAL STATUS ══════════════ -->
-<div id="predictions">
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier1">Tier 1 — Observational Record</div>
-  <h2>Predictions vs. Data</h2>
-  <p class="section-lead">
-    Every prediction is labeled with the three-label system used throughout the paper. No cherry-picking, no partial passes.
-  </p>
-
-  <table class="status-table">
-    <thead>
-      <tr>
-        <th>Observable</th>
-        <th>GAP Prediction</th>
-        <th>Observed</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>BTFR slope (V⁴ = GMa<sub>0</sub>)</td>
-        <td class="mono">0.250 (exact)</td>
-        <td class="mono">0.259 ± 0.023</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>RAR / 175 SPARC galaxies</td>
-        <td class="mono">&nu;(x) = 1/(1−e<sup>−√x</sup>)</td>
-        <td class="mono">175/175 galaxies</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>ESD lensing slope gap (baryons)</td>
-        <td class="mono">0.031</td>
-        <td class="mono">0.032 (KiDS-1000)</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>ESD lensing slope gap (+ gas)</td>
-        <td class="mono">0.005</td>
-        <td class="mono">0.005 (KiDS-1000)</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>A1689 cluster lensing (blind)</td>
-        <td class="mono">6/6 bins pass</td>
-        <td class="mono">blind test</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>CMB sound horizon r<sub>s</sub></td>
-        <td class="mono">147.40 Mpc</td>
-        <td class="mono">147.09 ± 0.26 Mpc</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>CMB angular scale 100 × &theta;<sub>⋆</sub></td>
-        <td class="mono">1.0403</td>
-        <td class="mono">1.0411 ± 0.031</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>GW speed c<sub>gw</sub>/c</td>
-        <td class="mono">1.000 (exact)</td>
-        <td class="mono">1 ± 10⁻¹⁵ (GW170817)</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>f&sigma;<sub>8</sub> cosmological perturbations</td>
-        <td class="mono">&chi;²/dof = 0.77</td>
-        <td class="mono">Planck/surveys</td>
-        <td><span class="badge badge-confirmed">CONFIRMED</span></td>
-      </tr>
-      <tr>
-        <td>&Omega;<sub>&Lambda;</sub> (dark energy fraction)</td>
-        <td class="mono">0.6928</td>
-        <td class="mono">0.692 (DESI DR1)</td>
-        <td><span class="badge badge-consistent">CONSISTENT</span></td>
-      </tr>
-      <tr>
-        <td>BAO D<sub>H</sub>/r<sub>d</sub></td>
-        <td class="mono">&chi;²/dof = 4.19</td>
-        <td class="mono">DESI DR1 (4 pts)</td>
-        <td><span class="badge badge-consistent">CONSISTENT</span></td>
-      </tr>
-      <tr>
-        <td>Bullet Cluster quantitative</td>
-        <td class="mono">Non-equil. &Xi; (Gap 5 needed)</td>
-        <td class="mono">Mass offset observed</td>
-        <td><span class="badge badge-open">OPEN — Tier 2</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="abstract-box mt-2" style="font-size:0.82rem;">
-    <strong>Label key.</strong>&nbsp;
-    <span class="badge badge-confirmed">CONFIRMED</span> = predicted within observational uncertainty from first principles.&nbsp;
-    <span class="badge badge-consistent">CONSISTENT</span> = consistent with data but requires H<sub>0</sub> as input (not a pure first-principles prediction).&nbsp;
-    <span class="badge badge-open">OPEN</span> = defined calculation, quantitative solution requires closing a Tier 2 Gap.
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ ENVIRONMENT FACTOR ══════════════ -->
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier1">v40 — Section 10.4</div>
-  <h2>Environment-Dependent Vacuum Response</h2>
-  <p class="section-lead">
-    GAP v40 tightens the Bullet Cluster framing: the quasi-static solution underpredicts amplitude <em>as expected</em> in a non-equilibrium regime. GAP predicts the direction of the offset and the scaling relation \(\Delta x_\Xi \sim v_{\rm merger}\tau_\Xi\); full amplitude recovery follows from the explicitly defined causal retarded Xi solution.
-  </p>
-
-  <div class="abstract-box" style="border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; margin-bottom: 2rem;">
-    <strong>The problem.</strong> In the quasi-static equilibrium limit, GAP predicts a lensing centroid offset of 15 kpc for the Bullet Cluster vs. 72 kpc observed — direction correct, amplitude underpredicted by ~5×. A reviewer’s first reaction: “This is just a tuning knob.”
-    <br><br>
-    <strong>The answer (v40).</strong> Four explicit statements make this reviewer-proof: (1) "not claimed here as a completed success" — unambiguous; (2) the retarded NE2 solution governs the Xi distribution post-merger; (3) \(\Delta x_\Xi \sim v_{\rm merger}\cdot\tau_\Xi\) (NE6) is the displayed leading-order prediction; (4) falsification criterion stated explicitly — if offsets across a sample of merging clusters do not correlate with merger velocity or ICM temperature, GAP fails at cluster scale.
-  </div>
-
-  <div class="eq-grid">
-    <div class="eq-card">
-      <div class="eq-label">NE5</div>
-      <div class="eq-math">\( g_\Xi^{\rm eff} = \mathcal{E}_{\rm env}\,\mathcal{S}_{\rm neq}\,g_\Xi^{\rm eq} \)</div>
-      <div class="eq-desc">Full effective Xi response — environment × non-equilibrium × equilibrium</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">NE5a</div>
-      <div class="eq-math">\( \mathcal{S}_{\rm neq} = \dfrac{1}{\sqrt{1+(\omega\tau_\Xi)^2}} \)</div>
-      <div class="eq-desc">Non-equilibrium suppression — &tau;<sub>&Xi;</sub> = 78.8 Gyr &gg; merger crossing time ~0.2 Gyr</div>
-    </div>
-    <div class="eq-card">
-      <div class="eq-label">NE5b</div>
-      <div class="eq-math">\( \mathcal{E}_{\rm env} = \left(\frac{\rho_{\rm struct}}{\rho_{\rm crit}}\right)^\alpha \)</div>
-      <div class="eq-desc">Environment coherence factor — structural organization of baryonic source</div>
-    </div>
-  </div>
-
-  <div class="tier-grid mt-2">
-    <div class="tier-card tier1">
-      <h3>\(\mathcal{E}_{\rm env}\) is bounded, not a tuning knob</h3>
-      <p>By construction \(0 &lt; \mathcal{E}_{\rm env} \le 1\) — it is a density ratio to a positive power, normalized so the galaxy limit returns 1. Across all astrophysical systems the range is ~0.2–1. This is <em>quantitatively sufficient</em> to account for the ~5× Bullet Cluster gap within physically bounded limits. No tuning is possible: the direction and magnitude of the correction are fixed by Postulate P2.</p>
-      <ul class="tier-list">
-        <li>\(0 &lt; \mathcal{E}_{\rm env} \le 1\) by construction</li>
-        <li>Range ~0.2–1 across real systems</li>
-        <li>Galaxies (coherent disk) → \(\mathcal{E}_{\rm env} \to 1\)</li>
-        <li>Clusters (hot plasma) → \(\mathcal{E}_{\rm env} \sim 0.2\text{–0.3}\)</li>
-        <li>0.2–0.3 × 15 kpc + NE suppression: spans observed 72 kpc</li>
-      </ul>
-    </div>
-    <div class="tier-card tier2">
-      <h3>Explicit falsification condition</h3>
-      <p>This is what separates credible from speculative: <em>if cluster lensing offsets do not correlate with merger velocity or ICM temperature across a sample of merging clusters, GAP is falsified at the cluster scale.</em> No fine-tuning can save it — the correlation direction is fixed by P2.</p>
-      <ul class="tier-list">
-        <li><strong>Falsification:</strong> no T or vₜₑ⬃ₜₑ⬃ correlation in cluster offsets</li>
-        <li><strong>Testable now:</strong> eROSITA + HSC/DES/Euclid</li>
-        <li>Fix &alpha; from modular spectrum (Gap 5)</li>
-        <li>Compute retarded Xi from merger history (Gap 7)</li>
+    <div class="disclaimers">
+      <h3>Plain language: what we are and aren't claiming</h3>
+      <ul role="list">
+        <li class="do">Across galaxies, groups, and clusters, the coherence variable orders systems in the expected direction.</li>
+        <li class="do">High-coherence systems appear MOND-like; low-coherence systems appear dark-matter-dominated.</li>
+        <li class="do">The current evidence supports the phase-boundary picture.</li>
+        <li>The theory is not proven.</li>
+        <li>The vacuum response kernel is not yet derived from first principles.</li>
+        <li>The galaxy σ proxy is not directly measured for every point in the boundary test — that is the largest open caveat.</li>
       </ul>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══════════════ STABILITY ══════════════ -->
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier1">Tier 1 — Stability Certificate</div>
-  <h2>S1–S7: Stability Proof</h2>
-  <p class="section-lead">
-    Section 14.5 of the paper establishes a Tier 1 stability certificate for the GAP &Xi; field across all physically accessible regimes. Full nonlinear stability (S8) is Tier 2 Gap 6.
-  </p>
+<!-- ============================ PHYSICS ============================= -->
+<section class="physics" id="physics">
+  <div class="container">
+    <div class="section-tag">The mechanism</div>
+    <h2 class="section-title">How the model works</h2>
+    <p class="section-intro">
+      Four ingredients. Each one is either a quantum-statistical input (Bose), a horizon-physics input (Unruh,
+      de Sitter), or a phase-ordering parameter. The framework is built to be auditable end-to-end.
+    </p>
 
-  <div class="stability-grid">
-    <div class="stability-card">
-      <div class="s-label">S1 — No Ghost</div>
-      <h3>Positive Kinetic Energy</h3>
-      <p>Z<sub>&Xi;</sub> &gt; 0 everywhere. The &Xi; field carries positive kinetic energy — no ghost instability. Confirmed analytically from the action structure.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S2 — No Tachyon</div>
-      <h3>Positive Mass Squared</h3>
-      <p>m<sub>&Xi;</sub>² &gt; 0. The harmonic potential is positive — no tachyonic runaway. Stable about the vacuum.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S3 — No Gradient Instability</div>
-      <h3>Subluminal Sound Speed</h3>
-      <p>Dispersion relation: &omega;² + i&omega;/&tau;<sub>&Xi;</sub> = c²(k² + m<sub>&Xi;</sub>²). Gravitational wave speed c<sub>gw</sub> = c exactly. No Horndeski G5 terms.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S4 — No Strong Coupling</div>
-      <h3>Weak Coupling</h3>
-      <p>&alpha;<sub>g</sub> = 0.076 ≪ 1. The effective coupling is safely perturbative — 10⁶× below post-Newtonian bounds.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S4b — Bianchi Conservation</div>
-      <h3>Covariant Conservation</h3>
-      <p>∇<sup>&mu;</sup>T<sup>matter</sup><sub>&mu;&nu;</sub> = −∇<sup>&mu;</sup>&Delta;T<sup>&Xi;</sup><sub>&mu;&nu;</sub>. Total stress-energy is covariantly conserved by construction.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S5 — Cosmological</div>
-      <h3>Stable Perturbations</h3>
-      <p>f&sigma;<sub>8</sub> &chi;²/dof = 0.77. Cosmological perturbation growth is stable and consistent with large-scale structure observations.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S6 — Galactic Branch</div>
-      <h3>Monotone Response</h3>
-      <p>∂g<sub>obs</sub>/∂g<sub>b</sub> &gt; 0 for all x &gt; 0. The galactic branch is monotonically stable — no oscillatory or runaway behavior in rotation curves.</p>
-    </div>
-    <div class="stability-card">
-      <div class="s-label">S7 — Branch Transition</div>
-      <h3>Smooth Interpolation</h3>
-      <p>&nu;(x) ∈ C<sup>∞</sup>. The transition between deep-MOND and Newtonian regimes is infinitely differentiable — no discontinuities or kinks.</p>
+    <div class="physics-stack">
+
+      <div class="physics-block">
+        <div class="physics-number">01</div>
+        <div class="physics-content">
+          <h3>The coherence parameter</h3>
+          <p class="physics-lead">A single variable orders galaxies, groups, and clusters.</p>
+          <p>The phase of the vacuum is set by the dimensionless coherence parameter
+            <em>C<sub>coh</sub> = n · λ<sub>dB</sub>³</em>, the product of local density and the cube of the de Broglie
+            wavelength. Equivalently — through quantum statistics — this is set by <em>ρ/σ³</em>, the ratio of mass
+            density to velocity-dispersion-cubed.</p>
+          <div class="equation-display">
+            \[C_{\rm coh} = n\,\lambda_{\rm dB}^3 \;\propto\; \rho/\sigma^3\]
+          </div>
+          <p>When C<sub>coh</sub> &gt; 1, the vacuum is coherent and gravity appears MOND-like. When C<sub>coh</sub> &lt; 1,
+            it behaves normally and gravity looks CDM-like.</p>
+        </div>
+      </div>
+
+      <div class="physics-block">
+        <div class="physics-number">02</div>
+        <div class="physics-content">
+          <h3>RAR from Bose + horizon temperatures</h3>
+          <p class="physics-lead">The galaxy law isn't fitted — it follows from quantum statistics.</p>
+          <p>An accelerated observer at acceleration <em>g<sub>b</sub></em> sees an Unruh temperature; the de Sitter
+            horizon contributes its own temperature set by the cosmological scale <em>a₀</em>. Combining these with
+            fluctuation–dissipation and Bose occupation statistics yields the radial acceleration relation:</p>
+          <div class="equation-display">
+            \[g_{\rm obs} = \frac{g_b}{1 - e^{-\sqrt{g_b/a_0}}}\]
+          </div>
+          <div class="physics-callout">
+            <span class="label">Why this matters</span>
+            The RAR has been treated as a tight empirical correlation. In this model it is <em>structural</em> — it
+            falls out of quantum statistics in a horizon-temperature background.
+          </div>
+        </div>
+      </div>
+
+      <div class="physics-block">
+        <div class="physics-number">03</div>
+        <div class="physics-content">
+          <h3>Two-stage environmental model</h3>
+          <p class="physics-lead">Formation and survival are separately controlled.</p>
+          <p><em>Formation:</em> the coherent phase forms when local density is high and internal motion is low. The
+            preconditioning factor multiplies C<sub>coh</sub>:</p>
+          <div class="equation-display">
+            \[C_{\rm form} = C_{\rm coh} \cdot P_{\rm pre}, \qquad P_{\rm pre} = \frac{f_\rho}{f_\sigma^3}\]
+          </div>
+          <p><em>Survival:</em> once formed, the phase can be disrupted by tidal gradients in the external gravitational
+            field. A dimensionless disruption parameter D<sub>env</sub> controls survival probability
+            S<sub>env</sub> = e<sup>−D<sub>env</sub></sup>. Empirically: S<sub>iso</sub> = 0.92 vs S<sub>emb</sub> = 0.76,
+            with p = 0.018.</p>
+        </div>
+      </div>
+
+      <div class="physics-block">
+        <div class="physics-number">04</div>
+        <div class="physics-content">
+          <h3>Lensing as a clean probe</h3>
+          <p class="physics-lead">No velocity dispersions needed.</p>
+          <p>Stacked weak-lensing measurements around galaxy groups in KiDS+GAMA give mass estimates that are
+            σ-independent. The model predicts the <em>direction</em> of the mass excess from the coherence variable
+            alone:</p>
+          <div class="equation-display">
+            \[\rho_S(\log C,\,\log M_{\rm excess}) \;=\; -0.94, \quad p = 7\times 10^{-10}\]
+          </div>
+          <p>The lensing direction is the strongest single piece of evidence for the model — and crucially, it does
+            not depend on the velocity measurements that drive the σ-proxy caveat.</p>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══════════════ TIER 2 GAPS ══════════════ -->
-<div id="tier2">
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-tier2">Tier 2 — Open Physics</div>
-  <h2>Seven Foundational Gaps</h2>
-  <p class="section-lead">
-    These are the precisely-defined open problems that would connect GAP's effective postulates to a microscopic quantum gravity theory. None affect Tier 1 predictions. All are honest about what is not yet known.
-  </p>
+<!-- ============================ EQUATIONS ============================= -->
+<section class="equations" id="equations">
+  <div class="container">
+    <div class="section-tag">Core equations</div>
+    <h2 class="section-title">The mathematical skeleton</h2>
+    <p class="section-intro">
+      Five equations. Together they define the phase variable, the derived RAR, the two-stage environmental model,
+      and the falsifiable directional ladder.
+    </p>
 
-  <div class="gap-list">
-    <div class="gap-card">
-      <div class="gap-num">G1</div>
-      <div>
-        <h3>Derive P1 from Quantum Gravity / Diffeomorphism Invariance</h3>
-        <p>Postulate P1 (No Absolute Vacuum Charge) states that only differential vacuum response gravitates. A derivation from diffeomorphism invariance or quantum observability constraints would eliminate P1 as an axiom. The Euclidean bridge result &rho;<sub>&Lambda;</sub> = 4&pi;³&epsilon;<sub>⋆</sub> is conditional on P1.</p>
+    <div class="eq-list">
+
+      <div class="eq-row">
+        <div class="eq-label">
+          <span class="eq-num">E1</span>
+          <h3>Phase-ordering variable</h3>
+          <p>The single dimensionless quantity that sorts galaxies, groups, and clusters along the same axis.</p>
+        </div>
+        <div class="eq-box">\[C_{\rm coh} = n\,\lambda_{\rm dB}^3 \;\propto\; \frac{\rho}{\sigma^3}\]</div>
       </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-num">G2</div>
-      <div>
-        <h3>Exact Fisher Normalization G<sub>&eta;&eta;</sub> = 1</h3>
-        <p>The normalization coefficient of the modular Fisher information metric is set to unity by dimensional analysis. A derivation from the microscopic structure of the modular Hamiltonian would fix this exactly and verify the coupling constant &alpha;<sub>g</sub> = 3/(4&pi;²) from first principles.</p>
+
+      <div class="eq-row">
+        <div class="eq-label">
+          <span class="eq-num">E2</span>
+          <h3>Horizon temperatures</h3>
+          <p>Unruh and de Sitter contributions seed the Bose-mechanism derivation of the RAR.</p>
+        </div>
+        <div class="eq-box">\[T_b = \frac{\hbar\, g_b}{2\pi c\, k_B}, \qquad T_0 = \frac{\hbar\, a_0}{2\pi c\, k_B}\]</div>
       </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-num">G3</div>
-      <div>
-        <h3>Gradient–Modular Correspondence from the Modular Generator <span style="color:var(--tier2);font-size:0.8rem;font-weight:400;">(most tractable)</span></h3>
-        <p>Postulate P3 sets &tau; = √(g<sub>b</sub>/a<sub>0</sub>) as the modular optical depth. This must be derived directly from the modular generator and the Tomita–Takesaki modular flow of the vacuum state. This is identified as the most tractable Tier 2 gap because the mathematical structure is precisely defined.</p>
+
+      <div class="eq-row">
+        <div class="eq-label">
+          <span class="eq-num">E3</span>
+          <h3>Derived radial acceleration relation</h3>
+          <p>The RAR emerges structurally from fluctuation–dissipation + Bose occupation in horizon backgrounds. Not fitted.</p>
+        </div>
+        <div class="eq-box">\[g_{\rm obs} = \frac{g_b}{1 - e^{-\sqrt{g_b/a_0}}}\]</div>
       </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-num">G4</div>
-      <div>
-        <h3>Derive the Gradient Perturbation Operator &Ocirc;<sub>grad</sub></h3>
-        <p>The operator that computes baryonic gradient intensity from the stress-energy tensor is postulated in P2. A derivation from quantum field theory on curved spacetime — specifically from the horizon degrees of freedom — is needed for full microsopic closure.</p>
+
+      <div class="eq-row">
+        <div class="eq-label">
+          <span class="eq-num">E4</span>
+          <h3>Two-stage environmental model</h3>
+          <p>Formation depends on density preconditioning; survival depends on tidal disruption.</p>
+        </div>
+        <div class="eq-box">\[C_{\rm form} = C_{\rm coh}\cdot\frac{f_\rho}{f_\sigma^3}, \quad S_{\rm env} = e^{-D_{\rm env}}\]</div>
       </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-num">G5</div>
-      <div>
-        <h3>Derive &tau;<sub>&Xi;</sub>, m<sub>&Xi;</sub>, and S<sub>&Xi;</sub>[T<sub>&mu;&nu;</sub>] from the Modular Spectrum</h3>
-        <p>The three dynamical parameters of the non-equilibrium &Xi; field — relaxation time, mass, and source coupling — are currently set by dimensional analysis from a<sub>0</sub>. Deriving them from the full modular spectrum would complete the non-equilibrium sector and enable quantitative Bullet Cluster predictions.</p>
+
+      <div class="eq-row">
+        <div class="eq-label">
+          <span class="eq-num">E5</span>
+          <h3>Directional ladder</h3>
+          <p>The headline statistical signature: a single ordering variable ranks systems across galaxies → groups → clusters.</p>
+        </div>
+        <div class="eq-box">\[\rho_S(\log C,\,\log M_{\rm excess}) = -0.94, \quad p = 7\times 10^{-10}\]</div>
       </div>
+
     </div>
-    <div class="gap-card">
-      <div class="gap-num">G6</div>
-      <div>
-        <h3>Full Nonlinear Stability Proof</h3>
-        <p>The Tier 1 stability certificate (S1–S7) covers linear and effective-field-theory level stability. A full nonlinear stability proof — demonstrating global boundedness and absence of singularity formation in strong-field regimes — is the natural completion of Section 14.5.</p>
+  </div>
+</section>
+
+<!-- ============================ TESTS ============================= -->
+<section class="tests" id="tests">
+  <div class="container">
+    <div class="section-tag">Tests and evidence</div>
+    <h2 class="section-title">What the data shows</h2>
+    <p class="section-intro">
+      Each card lists the dataset, sample, method, and result. Statuses are honestly labeled: <em>strong</em>,
+      <em>conditional</em>, <em>partial</em>, or <em>open</em>. We do not use "CONFIRMED" anywhere on this page.
+    </p>
+
+    <div class="tests-grid">
+
+      <div class="test-card">
+        <div class="test-header">
+          <span class="test-status strong">STRONG</span>
+          <span class="test-domain">Directional ladder</span>
+        </div>
+        <h3>Galaxy → group → cluster ordering</h3>
+        <p>Spearman correlation between the model's coherence variable and observed lensing mass excess across the
+          full mass ladder. The phase-ordering variable does real work here.</p>
+        <div class="test-meta">
+          <span class="meta-row"><strong>Variable:</strong> ρ/σ³ (proxy for n·λ<sub>dB</sub>³)</span>
+          <span class="meta-row"><strong>Coverage:</strong> galaxies, groups, clusters</span>
+          <span class="meta-row"><strong>Result:</strong> ρ<sub>S</sub> = −0.94, p = 7 × 10⁻¹⁰</span>
+        </div>
       </div>
+
+      <div class="test-card">
+        <div class="test-header">
+          <span class="test-status conditional">CONDITIONAL</span>
+          <span class="test-domain">Group phase structure</span>
+        </div>
+        <h3>Isolated vs embedded groups</h3>
+        <p>Galaxy groups split by environment. Isolated groups behave more coherently; embedded ones do not. Statistically
+          significant separation, strongest in isolated systems.</p>
+        <div class="test-meta">
+          <span class="meta-row"><strong>Test:</strong> inner C<sub>coh</sub> &gt; 1 fraction</span>
+          <span class="meta-row"><strong>Result:</strong> isolated 64% vs embedded 22%</span>
+          <span class="meta-row"><strong>Significance:</strong> p ≈ 0.03</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-header">
+          <span class="test-status partial">PARTIAL</span>
+          <span class="test-domain">Environmental survival</span>
+        </div>
+        <h3>Two-stage suppression</h3>
+        <p>Survival probability of the coherent phase under tidal disruption. Empirical separation between isolated and
+          embedded systems is consistent with the survival model.</p>
+        <div class="test-meta">
+          <span class="meta-row"><strong>Sound speed:</strong> c<sub>s</sub> ~ 20–40 km/s (derived)</span>
+          <span class="meta-row"><strong>Result:</strong> S<sub>iso</sub> = 0.92 vs S<sub>emb</sub> = 0.76</span>
+          <span class="meta-row"><strong>Significance:</strong> p = 0.018</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-header">
+          <span class="test-status strong">STRONG</span>
+          <span class="test-domain">σ-independent lensing</span>
+        </div>
+        <h3>KiDS+GAMA stacked groups</h3>
+        <p>Weak-lensing mass estimates around stacked groups — independent of velocity-dispersion measurements.
+          Predicted-normal-phase systems show high mass-to-baryon ratios as expected.</p>
+        <div class="test-meta">
+          <span class="meta-row"><strong>Dataset:</strong> KiDS-1000 + GAMA group catalogue</span>
+          <span class="meta-row"><strong>Mass estimator:</strong> M<sub>200</sub>, σ-independent</span>
+          <span class="meta-row"><strong>Result:</strong> M<sub>lens</sub>/M<sub>b</sub> ~ 100–170 in normal-phase systems</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-header">
+          <span class="test-status partial">PARTIAL</span>
+          <span class="test-domain">Mass threshold</span>
+        </div>
+        <h3>Frozen 5 eV threshold</h3>
+        <p>The mass scale at which the phase boundary should occur. Consistent with data so far; not yet validated
+          cleanly across the full ladder.</p>
+        <div class="test-meta">
+          <span class="meta-row"><strong>Threshold:</strong> m = 5 eV (frozen)</span>
+          <span class="meta-row"><strong>Test:</strong> AUC across galaxy → cluster sequence</span>
+          <span class="meta-row"><strong>Status:</strong> partial pass — re-run pending direct σ data</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-header">
+          <span class="test-status open">OPEN</span>
+          <span class="test-domain">σ proxy</span>
+        </div>
+        <h3>Direct-σ boundary re-run</h3>
+        <p>The single largest scientific caveat. The galaxy σ proxy is not directly measured for every point in the
+          ladder. The next move is to redo the test using only systems with direct spectroscopic or rotation-derived
+          velocity dispersions and check the AUC.</p>
+        <div class="test-meta">
+          <span class="meta-row"><strong>Plan:</strong> repeat ladder, direct σ only</span>
+          <span class="meta-row"><strong>Pass criterion:</strong> AUC stays high</span>
+          <span class="meta-row"><strong>Status:</strong> in progress</span>
+        </div>
+      </div>
+
     </div>
-    <div class="gap-card">
-      <div class="gap-num">G7</div>
-      <div>
-        <h3>Bullet Cluster: Retarded &Xi; + Lensing Convergence &kappa;(x,y)</h3>
-        <p>The Bullet Cluster provides a direct test of the non-equilibrium &Xi; sector. A quantitative solution requires computing the retarded &Xi; field from the merger history and projecting onto the lensing convergence map &kappa;(x,y). This requires closing Gap 5 first. The prediction Δx<sub>&Xi;</sub> ~ v<sub>merger</sub>·&tau;<sub>&Xi;</sub> is defined but not yet computed.</p>
+  </div>
+</section>
+
+<!-- ============================ OPEN PROBLEMS ============================= -->
+<section class="open-section" id="open">
+  <div class="container">
+    <div class="section-tag">What's left to prove</div>
+    <h2 class="section-title">Open problems on the table</h2>
+    <p class="section-intro">
+      These are the unresolved items, listed honestly. Solving any one of them would substantially strengthen the
+      framework; failing to solve them would substantially weaken it.
+    </p>
+
+    <div class="open-grid">
+
+      <div class="open-card">
+        <span class="q-tag">OQ1 — First principles</span>
+        <h4>Derive the universal vacuum kernel</h4>
+        <p>The vacuum response kernel is currently treated as <em>G<sub>ret</sub><sup>(b)</sup> ≈ G<sub>ret</sub><sup>(0)</sup></em>
+          — an effective approximation. A complete derivation from quantum gravity remains open.</p>
+      </div>
+
+      <div class="open-card">
+        <span class="q-tag">OQ2 — EFT consistency</span>
+        <h4>Derive c<sub>s</sub> and full EFT</h4>
+        <p>The sound speed c<sub>s</sub> ~ 20–40 km/s is currently estimated from c<sub>s</sub> ~ √(g<sub>b</sub> r). It needs
+          to be derived self-consistently within the effective theory rather than imposed as a parametric estimate.</p>
+      </div>
+
+      <div class="open-card">
+        <span class="q-tag">OQ3 — Boundary validation</span>
+        <h4>Validate threshold across the ladder</h4>
+        <p>The frozen 5 eV threshold has to be re-run cleanly across the galaxy → group → cluster sequence using only
+          systems with directly measured velocity dispersions. The AUC must stay high under that restriction.</p>
+      </div>
+
+      <div class="open-card">
+        <span class="q-tag">OQ4 — σ proxy</span>
+        <h4>Replace the proxy</h4>
+        <p>The galaxy-σ proxy in the directional ladder is the largest remaining caveat. The headline correlation must
+          be reproduced using direct spectroscopic σ before the boundary result can be called final.</p>
+      </div>
+
+      <div class="open-card">
+        <span class="q-tag">OQ5 — Tier 2 program</span>
+        <h4>Lift to first-principles theory</h4>
+        <p>The current framework is Tier 1 (effective field theory / phenomenology). The Tier 2 program — deriving
+          everything from first principles, removing adjustable parameters, and explaining why the vacuum behaves
+          this way — is the long-term direction.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EARLIER WORK ============================= -->
+<section class="paper" id="paper">
+  <div class="container">
+    <div class="paper-inner">
+      <div class="paper-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="48" height="60" rx="4" fill="var(--color-surface)" stroke="var(--color-border-strong)" stroke-width="2"/>
+          <line x1="14" y1="20" x2="42" y2="20" stroke="var(--color-text-muted)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+          <line x1="14" y1="28" x2="42" y2="28" stroke="var(--color-text-faint)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="14" y1="35" x2="42" y2="35" stroke="var(--color-text-faint)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="14" y1="42" x2="34" y2="42" stroke="var(--color-text-faint)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="14" y1="49" x2="38" y2="49" stroke="var(--color-text-faint)" stroke-width="1" stroke-linecap="round"/>
+          <rect x="12" y="14" width="32" height="10" rx="2" fill="var(--color-text-muted)" opacity="0.12"/>
+        </svg>
+      </div>
+      <div class="paper-text">
+        <h2>Earlier framework</h2>
+        <p>The Gradient-Activated Pressure (GAP) framework — published as v40 in April 2026 — is preserved here for
+          reference. The current coherence-based phase model supersedes it: GAP attempted to derive galactic and cosmological
+          gravity from a Ξ scalar field with a 4π³ Euclidean bridge. The current framework reorganizes the same physics
+          around the phase-ordering variable ρ/σ³ and a Bose-mechanism derivation of the RAR.</p>
+        <div class="paper-meta">
+          <span>Brian Reno</span>
+          <span class="dot">·</span>
+          <span>April 2026</span>
+          <span class="dot">·</span>
+          <span>GAP v40 — superseded</span>
+        </div>
+        <a href="GAP_theory_paper_v40.pdf" class="btn btn-ghost btn-large" download>
+          Download GAP v40 (PDF, archival)
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+        <p class="paper-note">A paper for the coherence phase model is in preparation.</p>
       </div>
     </div>
   </div>
-</div>
-</div>
+</section>
 
-<!-- ══════════════ PAPER ══════════════ -->
-<div id="paper">
-<hr class="divider">
-<div class="section">
-  <div class="section-tag tag-neutral">Publication</div>
-  <h2>The Paper</h2>
-  <p class="section-lead">
-    The full technical paper is available below. It contains the complete derivations, all numerical tests, the Tier 1 stability proof, the honest status table, and the seven Tier 2 gap definitions.
-  </p>
+<!-- ============================ FEEDBACK ============================= -->
+<section class="feedback" id="feedback">
+  <div class="container">
+    <div class="section-tag">Community</div>
+    <h2 class="section-title">Questions, critiques, collaboration</h2>
+    <p class="section-intro">
+      Critique especially welcome. The open questions on this site are the ones we know about — send the ones we've missed.
+    </p>
 
-  <div class="meta-bar">
-    <span>Brian Reno</span>
-    <span class="dot"></span>
-    <span>v40 — April 2026</span>
-    <span class="dot"></span>
-    <span>52 pages</span>
-    <span class="dot"></span>
-    <span>gr-qc + astro-ph.CO / astro-ph.GA</span>
-  </div>
+    <div class="feedback-inner">
+      <form class="feedback-form" id="feedbackForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="optional">(optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="type">Type of feedback</label>
+          <select id="type" name="type">
+            <option value="question">Question about the theory</option>
+            <option value="critique">Scientific critique</option>
+            <option value="collaboration">Collaboration inquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Your question, comment, or critique..." required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span class="btn-text">Send</span>
+            <span class="btn-spinner" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+      </form>
 
-  <div class="abstract-box">
-    <strong>Abstract.</strong> We present GAP (Gradient-Activated Pressure), a closed effective extension of general relativity in which gravity couples not to absolute vacuum energy, but to modular vacuum response. The theory introduces a single covariant scalar field &Xi; — the modular vacuum susceptibility — governed by a covariant action with coupling constant &alpha;<sub>g</sub> = 3/(4&pi;²) exact. The theory rests on four named postulates (P1–P4); a deeper Tier 2 program deriving these from quantum gravity is defined in Section 15.3.
-    <br><br>
-    In the static galaxy limit, GAP reproduces the full MOND interpolation function &nu;(x) = 1/(1 − e<sup>−√x</sup>) analytically from the postulates, with no system-dependent free parameters. The BTFR V<sub>f</sub>⁴ = GM<sub>b</sub>a<sub>0</sub> follows as an exact analytic consequence. All 175 SPARC rotation curves are fit without dark matter particles. The RAR radial acceleration relation and KiDS-1000 lensing ESD slopes are confirmed. The A1689 cluster lensing test passes blind (6/6 bins). The cosmological vacuum energy density &rho;<sub>&Lambda;</sub> = 4&pi;³&epsilon;<sub>⋆</sub> is derived from a Euclidean saddle point (conditional on P1), yielding &Omega;<sub>&Lambda;</sub> = 0.6928 (DESI 2024 DR1: 0.692, 0.11% agreement). The CMB sound horizon, f&sigma;<sub>8</sub>, and gravitational wave speed c<sub>gw</sub> = c are all confirmed. A Tier 1 stability certificate (S1–S7) is established in Section 14.5.
+      <div class="feedback-aside">
+        <h3>Status legend</h3>
+        <div class="label-legend">
+          <h4>How we mark each area</h4>
+          <div class="legend-item"><span class="badge strong">STRONG</span> — Robust effect, verified across the dataset</div>
+          <div class="legend-item"><span class="badge partial">PARTIAL</span> — Consistent with data, derivation incomplete</div>
+          <div class="legend-item"><span class="badge partial">CONDITIONAL</span> — Holds under stated conditions</div>
+          <div class="legend-item"><span class="badge open">OPEN</span> — Unresolved or in active development</div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-    <a href="GAP_theory_paper_v40.pdf" class="btn btn-primary" target="_blank">Download PDF (v40)</a>
-    <a href="#tier1" class="btn btn-secondary">Tier 1 / Tier 2 Explained</a>
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer>
-  <div style="margin-bottom:0.8rem;">
-    <span style="font-family:'DM Mono',monospace; color:var(--accent); font-size:0.9rem;">vacuumgravitytheory.org</span>
-  </div>
-  <div style="margin-bottom:0.5rem;">
-    Brian Reno · GAP Theory v40 · April 2026
-  </div>
-  <div>
-    <a href="GAP_theory_paper_v40.pdf">Paper PDF</a>
-    &nbsp;·&nbsp;
-    <a href="mailto:brianreno@gmail.com">Contact</a>
+<!-- ============================ FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="nav-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
+            <circle cx="18" cy="18" r="5.5" fill="currentColor"/>
+            <line x1="18" y1="2" x2="18" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18" y1="27" x2="18" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="2" y1="18" x2="9" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="27" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>vacuumgravitytheory.org</span>
+        </a>
+        <p>A coherence-based phase model — gravity from the structure of the vacuum, organized by a single physical variable.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div>
+          <h4>Theory</h4>
+          <ul role="list">
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#physics">Mechanism</a></li>
+            <li><a href="#equations">Equations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Evidence</h4>
+          <ul role="list">
+            <li><a href="#headline">Headline result</a></li>
+            <li><a href="#status">Status</a></li>
+            <li><a href="#tests">Tests &amp; evidence</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul role="list">
+            <li><a href="#open">Open problems</a></li>
+            <li><a href="#paper">Earlier framework (GAP)</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="mailto:brianreno@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Brian Reno.</p>
+      <p class="footer-disclaimer">This site presents the framework as it currently stands. Results have been derived
+        and tested against existing data but have not undergone formal peer review. Critique welcome.</p>
+    </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  'use strict';
+
+  const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+  function initTheme() {
+    const root = document.documentElement;
+    const toggle = document.querySelector('[data-theme-toggle]');
+    if (!toggle) return;
+    let saved = null;
+    try { saved = localStorage.getItem('vgt-theme'); } catch (e) {}
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+    updateThemeLabel(root.getAttribute('data-theme'), toggle);
+    toggle.addEventListener('click', function () {
+      const current = root.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('vgt-theme', next); } catch (e) {}
+      updateThemeLabel(next, toggle);
+    });
+  }
+  function updateThemeLabel(theme, button) {
+    const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    button.setAttribute('aria-label', label);
+    if (theme === 'light') {
+      button.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+    } else {
+      button.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+  }
+
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
+      const open = menu.getAttribute('aria-hidden') === 'false';
+      menu.setAttribute('aria-hidden', open ? 'true' : 'false');
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    menu.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  function initFeedbackForm() {
+    const form = document.getElementById('feedbackForm');
+    if (!form) return;
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+    const spinner = submitBtn ? submitBtn.querySelector('.btn-spinner') : null;
+    const status = document.getElementById('formStatus');
+
+    function setStatus(msg, kind) {
+      if (!status) return;
+      status.textContent = msg;
+      status.className = 'form-status ' + (kind || '');
+    }
+    function setLoading(on) {
+      if (!submitBtn) return;
+      submitBtn.disabled = on;
+      if (btnText) btnText.style.visibility = on ? 'hidden' : 'visible';
+      if (spinner) {
+        if (on) spinner.removeAttribute('hidden');
+        else spinner.setAttribute('hidden', '');
+      }
+    }
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      setStatus('', '');
+      const data = {
+        name: form.name.value.trim() || null,
+        email: form.email.value.trim() || null,
+        type: form.type.value,
+        message: form.message.value.trim()
+      };
+      if (!data.message) {
+        setStatus('Please enter a message before sending.', 'error');
+        form.message.focus();
+        return;
+      }
+      if (!SUPABASE_URL || SUPABASE_URL.indexOf('YOUR_') === 0) {
+        setStatus('Feedback endpoint is not yet configured. Please email brianreno@gmail.com directly.', 'error');
+        return;
+      }
+      setLoading(true);
+      try {
+        const resp = await fetch(SUPABASE_URL + '/rest/v1/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(data)
+        });
+        if (!resp.ok) {
+          const detail = await resp.text().catch(function () { return ''; });
+          throw new Error('Supabase returned ' + resp.status + (detail ? ': ' + detail : ''));
+        }
+        form.reset();
+        setStatus('Thank you — your message has been received.', 'success');
+      } catch (err) {
+        console.error('[feedback]', err);
+        setStatus('Something went wrong while sending. Please try again, or email brianreno@gmail.com.', 'error');
+      } finally {
+        setLoading(false);
+      }
+    });
+  }
+
+  function initAnchorOffset() {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        const id = link.getAttribute('href');
+        if (!id || id === '#' || id.length < 2) return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        event.preventDefault();
+        const header = document.querySelector('.site-header');
+        const offset = header ? header.getBoundingClientRect().height + 6 : 0;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        history.replaceState(null, '', id);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initTheme();
+    initMobileMenu();
+    initFeedbackForm();
+    initAnchorOffset();
+  });
+})();
+</script>
 
 </body>
 </html>

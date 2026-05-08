@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vacuum Gravity Theory — A Coherence-Based Phase Model</title>
-  <meta name="description" content="A coherence-based phase model that appears to organize dark-matter-like behavior across galaxies, groups, and clusters using a single physical variable: ρ/σ³." />
-  <meta property="og:title" content="Vacuum Gravity Theory — Coherence Phase Model" />
-  <meta property="og:description" content="A coherence-based phase model organizing dark-matter behavior across galaxies, groups, and clusters using a single physical variable." />
+  <title>Vacuum Gravity Theory — Current Research Direction</title>
+  <meta name="description" content="An ongoing research framework exploring how galaxy-scale gravitational behavior may emerge from vacuum coherence — what we accomplished, what broke at cluster scales, and where the work is now going." />
+  <meta property="og:title" content="Vacuum Gravity Theory — Current Research Direction" />
+  <meta property="og:description" content="A research framework: what worked at galaxy scales, what broke at cluster scales, and the current exploratory direction." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vacuumgravitytheory.org" />
 
@@ -719,12 +719,10 @@
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#summary">Summary</a></li>
-      <li><a href="#headline">Result</a></li>
-      <li><a href="#status">Status</a></li>
-      <li><a href="#physics">Physics</a></li>
-      <li><a href="#equations">Equations</a></li>
-      <li><a href="#tests">Tests</a></li>
-      <li><a href="#open">Open</a></li>
+      <li><a href="#status">Where it stands</a></li>
+      <li><a href="#story">The story</a></li>
+      <li><a href="#paper">Earlier framework</a></li>
+      <li><a href="#feedback" class="nav-cta">Feedback</a></li>
     </ul>
     <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -742,12 +740,9 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <ul role="list">
       <li><a href="#summary" class="mobile-link">Summary</a></li>
-      <li><a href="#headline" class="mobile-link">Headline result</a></li>
       <li><a href="#status" class="mobile-link">Where it stands</a></li>
-      <li><a href="#physics" class="mobile-link">The physics</a></li>
-      <li><a href="#equations" class="mobile-link">Equations</a></li>
-      <li><a href="#tests" class="mobile-link">Tests &amp; evidence</a></li>
-      <li><a href="#open" class="mobile-link">Open problems</a></li>
+      <li><a href="#story" class="mobile-link">The story</a></li>
+      <li><a href="#paper" class="mobile-link">Earlier framework</a></li>
       <li><a href="#feedback" class="mobile-link">Feedback</a></li>
     </ul>
   </div>
@@ -757,28 +752,29 @@
 <section class="hero" id="hero">
   <div class="hero-bg"><div class="hero-glow" aria-hidden="true"></div></div>
   <div class="hero-content">
-    <div class="hero-badge">Coherence Phase Model</div>
+    <div class="hero-badge">Research framework — in progress</div>
     <h1 class="hero-title">
-      Gravity from a<br/>
-      <span class="accent">coherent vacuum phase</span>
+      Gravity from the<br/>
+      <span class="accent">structure of the vacuum</span>
     </h1>
     <p class="hero-subtitle">
-      A framework in which the quantum vacuum behaves like a phase-ordered medium.
-      Where the vacuum is coherent, gravity appears enhanced — matching galaxy rotation curves
-      without dark matter. Where it's not, gravity behaves normally — and clusters look as they do.
+      An ongoing research framework asking a single question: can the gravitational behavior of galaxies,
+      groups, and clusters emerge from how matter <em>organizes</em> the vacuum itself? Below: what we
+      accomplished, what broke, what we learned, and where the work is now going.
     </p>
     <div class="hero-headline-claim">
-      <span class="label">Headline claim</span>
-      A coherence-based phase model appears to organize dark-matter-like behavior across galaxies,
-      groups, and clusters using a single physical variable: <em>ρ/σ³</em>.
+      <span class="label">Where this stands</span>
+      The original framework reproduces galaxy-scale phenomenology cleanly. It failed structurally at galaxy
+      cluster mergers. The current direction is <em>exploratory</em> — investigating whether multi-domain
+      coherence and vortex-like spacetime organization can account for cluster-scale behavior.
     </div>
     <div class="hero-cta-row">
-      <a href="#headline" class="btn btn-primary">See the strongest result</a>
-      <a href="#summary" class="btn btn-ghost">Summary in plain English</a>
+      <a href="#summary" class="btn btn-primary">Read the summary</a>
+      <a href="#status" class="btn btn-ghost">Where it stands now</a>
     </div>
   </div>
 
-  <div class="hero-diagram" aria-label="Coherence phase diagram: ρ/σ³ axis with two phases separated by a threshold">
+  <div class="hero-diagram" aria-label="Coherence phase diagram: galaxies coherent, clusters chaotic, groups in between">
     <svg class="phase-svg" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="cohgrad" x1="0" y1="0" x2="1" y2="0">
@@ -789,44 +785,28 @@
         </linearGradient>
       </defs>
       <rect x="40" y="60" width="400" height="220" fill="url(#cohgrad)" stroke="none"/>
-
-      <!-- Threshold line -->
       <line x1="240" y1="50" x2="240" y2="290" stroke="#e6e8ec" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.7"/>
-      <text x="240" y="44" fill="#e6e8ec" font-family="DM Mono, monospace" font-size="11" text-anchor="middle">C_coh = 1</text>
-
-      <!-- Axis -->
+      <text x="240" y="44" fill="#e6e8ec" font-family="DM Mono, monospace" font-size="11" text-anchor="middle">phase boundary</text>
       <line x1="40" y1="290" x2="440" y2="290" stroke="#8b96a5" stroke-width="1"/>
-      <text x="240" y="320" fill="#8b96a5" font-family="DM Mono, monospace" font-size="11" text-anchor="middle">phase variable C_coh = n · λ_dB³</text>
-      <text x="40" y="340" fill="#4fb8c4" font-family="DM Mono, monospace" font-size="10" text-anchor="start">low ρ/σ³</text>
-      <text x="440" y="340" fill="#e8af34" font-family="DM Mono, monospace" font-size="10" text-anchor="end">high ρ/σ³</text>
-
-      <!-- Phase labels -->
-      <text x="100" y="100" fill="#4fb8c4" font-family="DM Sans, sans-serif" font-size="14" font-weight="600">Normal phase</text>
-      <text x="100" y="118" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10">CDM-like behavior</text>
-      <text x="100" y="132" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10">→ clusters</text>
-
-      <text x="380" y="100" fill="#e8af34" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" text-anchor="end">Coherent phase</text>
-      <text x="380" y="118" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10" text-anchor="end">MOND-like behavior</text>
-      <text x="380" y="132" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10" text-anchor="end">→ galaxies</text>
-
-      <!-- Sample dots: galaxies on right, clusters on left, groups straddling -->
+      <text x="240" y="320" fill="#8b96a5" font-family="DM Mono, monospace" font-size="11" text-anchor="middle">coherence  C ∝ ρ / σ³</text>
+      <text x="40" y="340" fill="#4fb8c4" font-family="DM Mono, monospace" font-size="10" text-anchor="start">low</text>
+      <text x="440" y="340" fill="#e8af34" font-family="DM Mono, monospace" font-size="10" text-anchor="end">high</text>
+      <text x="100" y="100" fill="#4fb8c4" font-family="DM Sans, sans-serif" font-size="14" font-weight="600">Chaotic</text>
+      <text x="100" y="118" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10">cluster regime</text>
+      <text x="380" y="100" fill="#e8af34" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" text-anchor="end">Coherent</text>
+      <text x="380" y="118" fill="#8b96a5" font-family="DM Mono, monospace" font-size="10" text-anchor="end">galaxy regime</text>
       <g>
-        <!-- Cluster dots (left, low coherence) -->
         <circle cx="80" cy="170" r="4" fill="#4fb8c4"/>
         <circle cx="105" cy="195" r="4" fill="#4fb8c4"/>
         <circle cx="130" cy="180" r="4" fill="#4fb8c4"/>
         <circle cx="155" cy="210" r="4" fill="#4fb8c4"/>
         <circle cx="180" cy="190" r="4" fill="#4fb8c4"/>
         <text x="120" y="240" fill="#4fb8c4" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">clusters</text>
-
-        <!-- Group dots (straddling threshold) -->
         <circle cx="215" cy="200" r="4" fill="#e6e8ec" opacity="0.7"/>
         <circle cx="235" cy="180" r="4" fill="#e6e8ec" opacity="0.7"/>
         <circle cx="255" cy="195" r="4" fill="#e6e8ec" opacity="0.7"/>
         <circle cx="270" cy="175" r="4" fill="#e6e8ec" opacity="0.7"/>
         <text x="245" y="240" fill="#e6e8ec" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">groups</text>
-
-        <!-- Galaxy dots (right, high coherence) -->
         <circle cx="305" cy="195" r="4" fill="#e8af34"/>
         <circle cx="335" cy="170" r="4" fill="#e8af34"/>
         <circle cx="360" cy="200" r="4" fill="#e8af34"/>
@@ -842,98 +822,61 @@
 <section class="summary" id="summary">
   <div class="container">
     <div class="section-tag">Summary</div>
-    <h2 class="section-title">In plain English</h2>
+    <h2 class="section-title">In plain English — the arc of the work</h2>
     <p class="section-intro">
-      For decades, physics has assumed the universe is filled with invisible "dark matter" to explain why
-      galaxies rotate the way they do. This theory takes a different approach: <em>what if gravity itself
-      changes depending on the environment — because it emerges from the vacuum?</em>
+      Vacuum Gravity Theory began with a simple but profound question: <em>what if gravity is not just caused
+      by matter itself, but also by how matter organizes and disturbs the vacuum structure of spacetime?</em>
+      The framework has gone through real progress and a real structural failure. Both are below.
     </p>
 
     <div class="summary-blocks">
 
       <div class="summary-block">
-        <div class="summary-num">01</div>
-        <h3>What this is about</h3>
-        <p>Instead of adding unseen matter, the theory says the vacuum of space behaves like a physical medium. Under
-          the right conditions it forms a <em>coherent state</em> — like a superfluid. In that state, gravity appears
-          stronger, matching galaxy rotation curves. In other conditions, the vacuum behaves normally, and gravity
-          looks like the cluster-scale gravity we measure.</p>
+        <div class="summary-num">01 — WHAT WE SET OUT TO EXPLORE</div>
+        <h3>The original question</h3>
+        <p>Instead of viewing space as empty, the theory treats the vacuum more like a dynamic medium capable of
+          organizing itself under certain conditions. The starting hypothesis: galaxies may create coherent
+          distortions in the vacuum field, amplifying gravity without requiring large amounts of invisible dark
+          matter particles.</p>
       </div>
 
       <div class="summary-block">
-        <div class="summary-num">02</div>
-        <h3>Where we started</h3>
-        <p>Galaxies follow a precise law (the Radial Acceleration Relation) connecting visible matter to gravity. It
-          is extremely consistent — and difficult to explain with standard dark-matter halos. We asked the question:
-          <em>can this law be derived from physics, instead of just fitted?</em></p>
+        <div class="summary-num">02 — WHAT WE ACCOMPLISHED</div>
+        <h3>Galaxy-scale agreement</h3>
+        <p>The theory naturally aligned with several major galactic observations: the tight relationship between
+          visible matter and observed gravity (RAR), galaxy rotation curve behavior, low-acceleration scaling laws,
+          and coherent structure across many galaxy types. Galactic gravity appeared deeply connected to how
+          ordered and coherent the system was.</p>
       </div>
 
       <div class="summary-block">
-        <div class="summary-num">03</div>
-        <h3>What we have</h3>
-        <p>A model where (i) the galaxy law is derived from quantum statistics and horizon physics, not assumed;
-          (ii) the universe has two phases — coherent (galaxies) and normal (clusters); (iii) galaxy groups, sitting
-          between, reveal the transition; and (iv) the phase-ordering variable <em>ρ/σ³</em> sorts systems in the
-          right direction across all three scales.</p>
+        <div class="summary-num">03 — WHAT BROKE</div>
+        <h3>Cluster mergers (Bullet Cluster)</h3>
+        <p>The original framework attempted to explain all dark-matter phenomena using only baryons plus vacuum
+          response. That worked for galaxies. It failed in cluster collisions like the Bullet Cluster, where the
+          strongest gravitational lensing appears displaced ahead of the collisional gas. The original baryon-linked
+          response could not reproduce the displacement. This is the major structural failure of the first-generation
+          theory — and we say so plainly.</p>
       </div>
 
       <div class="summary-block">
-        <div class="summary-num">04</div>
-        <h3>Environment matters</h3>
-        <p>Two physical effects shape behavior. <em>Formation</em>: dense, calm systems can enter the coherent phase;
-          disturbed environments (lower density, higher motion) prevent it from forming. <em>Survival</em>: even where
-          the phase forms, strong tidal forces can disrupt it. Both are partially derived and physically plausible.</p>
+        <div class="summary-num">04 — WHAT WE LEARNED</div>
+        <h3>Coherence is the organizing variable</h3>
+        <p>The failure itself was instructive. Galaxies are ordered, low-dispersion, rotationally coherent systems.
+          Clusters are turbulent, merger-dominated, chaotic. A simple relation based on density and velocity
+          dispersion — <em>C<sub>coh</sub> ∝ ρ/σ³</em> — appeared to organize systems consistently across scales.
+          Coherence is doing real work; chaos suppresses or reorganizes it.</p>
       </div>
 
       <div class="summary-block">
-        <div class="summary-num">05</div>
-        <h3>Lensing supports it</h3>
-        <p>Gravitational lensing tests don't depend on velocity measurements. Stacked KiDS+GAMA group lensing shows
-          systems with higher predicted coherence behave more like galaxies, while lower-coherence systems behave more
-          like dark-matter-dominated clusters — independent confirmation of the direction.</p>
+        <div class="summary-num">05 — THE NEW DIRECTION</div>
+        <h3>Multi-domain phase &amp; vortex spacetime</h3>
+        <p>The current research direction explores whether galaxy-scale coherence domains, interacting under extreme
+          cluster conditions, can produce persistent collective curvature. The mathematical intuition resembles
+          superfluid turbulence and vortex-field dynamics: a galaxy as a single coherent vortex; a cluster as many
+          interacting vortices. This is exploratory, not finished.</p>
       </div>
 
-      <div class="summary-block">
-        <div class="summary-num">06</div>
-        <h3>What's left to prove</h3>
-        <p>This is not a finished theory. The vacuum response kernel is not fully derived from first principles;
-          c<sub>s</sub> and the EFT need to be self-consistent; and the threshold needs to be validated cleanly across
-          the galaxy → group → cluster ladder using only systems with directly measured velocity dispersions. The
-          framework is promising; it is not yet proven.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================ HEADLINE RESULT ============================= -->
-<section class="headline-result" id="headline">
-  <div class="container">
-    <div class="section-tag">Strongest single result</div>
-    <h2 class="section-title">Galaxies, groups, and clusters in the right order</h2>
-    <p class="section-intro">
-      A directional Spearman correlation between the model's coherence variable and the observed mass excess
-      (lensing mass / baryonic mass) — measured across galaxies, groups, and clusters in a single ladder.
-    </p>
-
-    <div class="result-card">
-      <div class="result-stat">
-        <div class="result-number">−0.94</div>
-        <div class="result-pvalue">p = 7 × 10⁻¹⁰</div>
-        <div class="result-label">Spearman ρ<sub>S</sub>(log C, log M<sub>excess</sub>)</div>
-      </div>
-      <div class="result-text">
-        <h3>Directional ladder validation: strong pass</h3>
-        <p>The phase-ordering variable orders systems in the expected direction across the entire mass ladder. High-coherence
-          systems appear MOND-like; low-coherence systems appear dark-matter-dominated. The <em>direction</em> is robust;
-          the strongest separation is between galaxies and clusters, with a mixed transition regime in groups.</p>
-        <div class="result-caveat">
-          <span class="label">Honest caveat</span>
-          The galaxy σ proxy is not directly measured for every point. The boundary result is strong but not final. The next
-          step is to repeat this ladder using only systems with direct spectroscopic σ or rotation-derived velocity-dispersion
-          proxies, and check whether the AUC stays high.
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -942,11 +885,10 @@
 <section class="status-section" id="status">
   <div class="container">
     <div class="section-tag">Where it stands</div>
-    <h2 class="section-title">Honest status, area by area</h2>
+    <h2 class="section-title">Honest snapshot</h2>
     <p class="section-intro">
-      Each row gives a calibrated verdict — strong pass, partial pass, conditional, or open. We have not "proven the
-      theory." Current evidence supports the phase-boundary picture, with the strongest separation between galaxies and
-      clusters and a mixed transition in groups.
+      Four lines that capture the current state. We are not claiming the theory is proven. We are saying which
+      pieces are solid, which broke, and which are open.
     </p>
 
     <table class="status-table" role="table">
@@ -959,60 +901,50 @@
       </thead>
       <tbody>
         <tr>
-          <td class="area">Galaxy / RAR behavior</td>
+          <td class="area">Galaxy-scale phenomenology</td>
           <td><span class="status-pill strong">Strong</span></td>
-          <td class="note">RAR structurally reproduced from Bose statistics + horizon temperatures.</td>
+          <td class="note">Original framework reproduces SPARC rotation curves and low-acceleration scaling.</td>
         </tr>
         <tr>
-          <td class="area">Group radial phase behavior</td>
-          <td><span class="status-pill conditional">Conditional pass</span></td>
-          <td class="note">Strongest in isolated groups (64% inner C_coh &gt; 1 vs 22% embedded; p ≈ 0.03).</td>
+          <td class="area">Cluster mergers (Bullet Cluster)</td>
+          <td><span class="status-pill open">Failed</span></td>
+          <td class="note">Original baryon-linked vacuum response cannot reproduce displaced lensing offsets.</td>
         </tr>
         <tr>
-          <td class="area">Environmental suppression</td>
-          <td><span class="status-pill partial">Partial</span></td>
-          <td class="note">Two-stage formation+survival model is partially derived and physically plausible.</td>
+          <td class="area">Coherence ordering across scales</td>
+          <td><span class="status-pill partial">Suggestive</span></td>
+          <td class="note">C<sub>coh</sub> ∝ ρ/σ³ separates galaxies, groups, and clusters in a physically sensible way.</td>
         </tr>
         <tr>
-          <td class="area">Galaxy → group → cluster ordering</td>
-          <td><span class="status-pill strong">Strong pass</span></td>
-          <td class="note">ρ<sub>S</sub>(log C, log M<sub>excess</sub>) = −0.94 (p = 7 × 10⁻¹⁰) across the full ladder.</td>
-        </tr>
-        <tr>
-          <td class="area">Frozen m = 5 eV threshold</td>
-          <td><span class="status-pill partial">Partial pass</span></td>
-          <td class="note">Threshold consistent with data, not yet validated cleanly across the entire ladder.</td>
-        </tr>
-        <tr>
-          <td class="area">Full first-principles derivation</td>
-          <td><span class="status-pill open">Open</span></td>
-          <td class="note">Vacuum response kernel and c<sub>s</sub> still need to be derived self-consistently.</td>
+          <td class="area">Current direction (multi-domain phase / vortex)</td>
+          <td><span class="status-pill open">Exploratory</span></td>
+          <td class="note">Investigating whether interacting coherence domains generate persistent curvature structures.</td>
         </tr>
       </tbody>
     </table>
 
     <div class="disclaimers">
-      <h3>Plain language: what we are and aren't claiming</h3>
+      <h3>What we are and aren't claiming</h3>
       <ul role="list">
-        <li class="do">Across galaxies, groups, and clusters, the coherence variable orders systems in the expected direction.</li>
-        <li class="do">High-coherence systems appear MOND-like; low-coherence systems appear dark-matter-dominated.</li>
-        <li class="do">The current evidence supports the phase-boundary picture.</li>
-        <li>The theory is not proven.</li>
-        <li>The vacuum response kernel is not yet derived from first principles.</li>
-        <li>The galaxy σ proxy is not directly measured for every point in the boundary test — that is the largest open caveat.</li>
+        <li class="do">Galaxy-scale gravitational behavior emerges naturally from a coherence-driven vacuum response.</li>
+        <li class="do">A coherence parameter built from density and velocity dispersion organizes systems sensibly across scales.</li>
+        <li>The theory is not proven and is not finished.</li>
+        <li>The original baryon-linked formulation cannot account for cluster merger lensing — this is a real failure.</li>
+        <li>The current vortex/multi-domain direction is an open research program, not a published result.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ============================ PHYSICS ============================= -->
-<section class="physics" id="physics">
+<!-- ============================ THE STORY ============================= -->
+<section class="physics" id="story">
   <div class="container">
-    <div class="section-tag">The mechanism</div>
-    <h2 class="section-title">How the model works</h2>
+    <div class="section-tag">The story in detail</div>
+    <h2 class="section-title">Technical research summary</h2>
     <p class="section-intro">
-      Four ingredients. Each one is either a quantum-statistical input (Bose), a horizon-physics input (Unruh,
-      de Sitter), or a phase-ordering parameter. The framework is built to be auditable end-to-end.
+      Five blocks tracing the framework as it currently stands: the original galactic agreement, the cluster failure,
+      what coherence revealed, and the two exploratory directions now under investigation — multi-domain phase
+      structure for clusters, and horizon thermodynamics for the cosmological constant.
     </p>
 
     <div class="physics-stack">
@@ -1020,69 +952,204 @@
       <div class="physics-block">
         <div class="physics-number">01</div>
         <div class="physics-content">
-          <h3>The coherence parameter</h3>
-          <p class="physics-lead">A single variable orders galaxies, groups, and clusters.</p>
-          <p>The phase of the vacuum is set by the dimensionless coherence parameter
-            <em>C<sub>coh</sub> = n · λ<sub>dB</sub>³</em>, the product of local density and the cube of the de Broglie
-            wavelength. Equivalently — through quantum statistics — this is set by <em>ρ/σ³</em>, the ratio of mass
-            density to velocity-dispersion-cubed.</p>
+          <h3>What we accomplished — galaxy-scale agreement</h3>
+          <p class="physics-lead">Vacuum coherence reproduces galactic phenomenology cleanly.</p>
+          <p>The original Vacuum Gravity / VGSG / GAP framework investigated whether observed galaxy-scale
+            gravitational anomalies could emerge from vacuum coherence rather than particle dark matter alone.
+            Core ingredients: vacuum energy minimization, coherence-dependent gravitational amplification,
+            phase-locking, and emergent low-acceleration dynamics. The framework reproduced the SPARC rotation
+            curve sample using a baryon-linked coherence response.</p>
+          <p>The core empirical relation studied extensively was the Bose-mechanism RAR:</p>
           <div class="equation-display">
-            \[C_{\rm coh} = n\,\lambda_{\rm dB}^3 \;\propto\; \rho/\sigma^3\]
+            \[g_{\rm obs} = \frac{g_b}{1 - e^{-\sqrt{g_b/a_0}}}\]
           </div>
-          <p>When C<sub>coh</sub> &gt; 1, the vacuum is coherent and gravity appears MOND-like. When C<sub>coh</sub> &lt; 1,
-            it behaves normally and gravity looks CDM-like.</p>
+          <p>with the acceleration scale tied to cosmological structure:</p>
+          <div class="equation-display">
+            \[a_0 \approx \frac{c\, H_0}{2\pi}\]
+          </div>
+          <div class="physics-callout">
+            <span class="label">Key empirical finding</span>
+            Gravitational behavior at galaxy scales appears deeply connected to how ordered and coherent the
+            galactic system is. Coherent systems strengthen organized vacuum behavior; chaotic systems disrupt it.
+          </div>
         </div>
       </div>
 
       <div class="physics-block">
         <div class="physics-number">02</div>
         <div class="physics-content">
-          <h3>RAR from Bose + horizon temperatures</h3>
-          <p class="physics-lead">The galaxy law isn't fitted — it follows from quantum statistics.</p>
-          <p>An accelerated observer at acceleration <em>g<sub>b</sub></em> sees an Unruh temperature; the de Sitter
-            horizon contributes its own temperature set by the cosmological scale <em>a₀</em>. Combining these with
-            fluctuation–dissipation and Bose occupation statistics yields the radial acceleration relation:</p>
-          <div class="equation-display">
-            \[g_{\rm obs} = \frac{g_b}{1 - e^{-\sqrt{g_b/a_0}}}\]
-          </div>
-          <div class="physics-callout">
-            <span class="label">Why this matters</span>
-            The RAR has been treated as a tight empirical correlation. In this model it is <em>structural</em> — it
-            falls out of quantum statistics in a horizon-temperature background.
-          </div>
+          <h3>What broke — cluster mergers</h3>
+          <p class="physics-lead">The original baryon-linked formulation fails at the Bullet Cluster.</p>
+          <p>The first-generation theory assumed that vacuum response remained tightly coupled to baryonic matter.
+            That assumption worked for ordered, low-dispersion galactic systems. It does not work in major cluster
+            mergers like the Bullet Cluster (1E 0657-56), where the hot intracluster gas slows during the collision
+            but the strongest gravitational lensing appears displaced ahead of the gas — coincident with the
+            galaxies, not the gas peak.</p>
+          <p>This displacement is one of the strongest empirical arguments for an independent dark-matter component.
+            The original baryon-linked vacuum response could not quantitatively reproduce:</p>
+          <ul class="gr-list">
+            <li>the observed lensing offsets,</li>
+            <li>long-lived collisionless behavior of the lensing peak,</li>
+            <li>or persistent displaced gravitational structure independent of the shocked gas distribution.</li>
+          </ul>
+          <p>This rules out the simplest baryon-only vacuum response interpretation. We say so plainly rather than
+            burying it.</p>
         </div>
       </div>
 
       <div class="physics-block">
         <div class="physics-number">03</div>
         <div class="physics-content">
-          <h3>Two-stage environmental model</h3>
-          <p class="physics-lead">Formation and survival are separately controlled.</p>
-          <p><em>Formation:</em> the coherent phase forms when local density is high and internal motion is low. The
-            preconditioning factor multiplies C<sub>coh</sub>:</p>
+          <h3>What we learned — coherence is the variable</h3>
+          <p class="physics-lead">Galaxies and clusters operate in fundamentally different coherence regimes.</p>
+          <p>The cluster failure was instructive. Galaxies are ordered, rotationally coherent, low-dispersion
+            systems with long-lived gravitational structure. Clusters are turbulent, merger-dominated, highly
+            chaotic. A single dimensionless variable consistently organized systems across these scales:</p>
           <div class="equation-display">
-            \[C_{\rm form} = C_{\rm coh} \cdot P_{\rm pre}, \qquad P_{\rm pre} = \frac{f_\rho}{f_\sigma^3}\]
+            \[C_{\rm coh} \;\propto\; \frac{\rho}{\sigma^3}\]
           </div>
-          <p><em>Survival:</em> once formed, the phase can be disrupted by tidal gradients in the external gravitational
-            field. A dimensionless disruption parameter D<sub>env</sub> controls survival probability
-            S<sub>env</sub> = e<sup>−D<sub>env</sub></sup>. Empirically: S<sub>iso</sub> = 0.92 vs S<sub>emb</sub> = 0.76,
-            with p = 0.018.</p>
+          <p>where ρ is effective local density and σ is the velocity dispersion of the system. High C means a
+            coherent regime (galaxies); low C means a chaotic regime (clusters); groups straddle the boundary.</p>
+          <div class="physics-callout">
+            <span class="label">Why this matters</span>
+            The data did not push us toward more dark-matter particles. It pushed us toward the recognition that
+            the same physical variable — density divided by velocity-dispersion-cubed — sorts systems by their
+            apparent gravitational behavior. That is the constraint the next theory has to honor.
+          </div>
         </div>
       </div>
 
       <div class="physics-block">
         <div class="physics-number">04</div>
         <div class="physics-content">
-          <h3>Lensing as a clean probe</h3>
-          <p class="physics-lead">No velocity dispersions needed.</p>
-          <p>Stacked weak-lensing measurements around galaxy groups in KiDS+GAMA give mass estimates that are
-            σ-independent. The model predicts the <em>direction</em> of the mass excess from the coherence variable
-            alone:</p>
-          <div class="equation-display">
-            \[\rho_S(\log C,\,\log M_{\rm excess}) \;=\; -0.94, \quad p = 7\times 10^{-10}\]
+          <h3>The new direction — multi-domain phase &amp; vortex spacetime</h3>
+          <p class="physics-lead">An exploratory program: galaxies as vortices, clusters as interacting vortex fields.</p>
+          <p>The current research direction asks whether galaxy-scale vacuum coherence survives collisions as
+            interacting phase structures or coherent spacetime flow patterns. Instead of treating cluster lensing
+            purely as invisible particles, the new direction investigates whether multiple galactic coherence domains,
+            interacting like fluid vortices, could create large-scale persistent curvature structures that <em>do not</em>
+            track the shocked baryonic gas.</p>
+
+          <div class="physics-icon">
+            <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:auto;">
+              <!-- LEFT: single coherent vortex (galaxy) -->
+              <g transform="translate(120 95)">
+                <ellipse cx="0" cy="0" rx="58" ry="22" stroke="var(--color-primary)" stroke-width="1.2" fill="none" opacity="0.25"/>
+                <ellipse cx="0" cy="0" rx="44" ry="17" stroke="var(--color-primary)" stroke-width="1.4" fill="none" opacity="0.5"/>
+                <ellipse cx="0" cy="0" rx="28" ry="11" stroke="var(--color-primary)" stroke-width="1.7" fill="none" opacity="0.8"/>
+                <path d="M -48 -3 A 48 19 0 0 1 -22 -17" stroke="var(--color-primary)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                <polygon points="-22,-17 -19,-12 -27,-13" fill="var(--color-primary)"/>
+                <circle cx="0" cy="0" r="4.5" fill="var(--color-gold)"/>
+                <text x="0" y="56" fill="var(--color-text)" font-family="DM Sans, sans-serif" font-size="13" text-anchor="middle" font-weight="600">Galaxy</text>
+                <text x="0" y="74" fill="var(--color-text-muted)" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">single coherent vortex</text>
+              </g>
+
+              <!-- DIVIDER -->
+              <line x1="240" y1="35" x2="240" y2="160" stroke="var(--color-border-strong)" stroke-width="1" stroke-dasharray="3 4"/>
+
+              <!-- RIGHT: interacting vortex field (cluster) -->
+              <g>
+                <g transform="translate(310 65) rotate(15)">
+                  <ellipse cx="0" cy="0" rx="22" ry="9" stroke="var(--color-gold)" stroke-width="1.2" fill="none" opacity="0.5"/>
+                  <ellipse cx="0" cy="0" rx="13" ry="5" stroke="var(--color-gold)" stroke-width="1.5" fill="none" opacity="0.85"/>
+                  <circle cx="0" cy="0" r="2.5" fill="var(--color-gold)"/>
+                </g>
+                <g transform="translate(370 105) rotate(-25)">
+                  <ellipse cx="0" cy="0" rx="20" ry="8" stroke="var(--color-gold)" stroke-width="1.2" fill="none" opacity="0.5"/>
+                  <ellipse cx="0" cy="0" rx="12" ry="4.5" stroke="var(--color-gold)" stroke-width="1.5" fill="none" opacity="0.85"/>
+                  <circle cx="0" cy="0" r="2.5" fill="var(--color-gold)"/>
+                </g>
+                <g transform="translate(330 135) rotate(40)">
+                  <ellipse cx="0" cy="0" rx="18" ry="7" stroke="var(--color-gold)" stroke-width="1.2" fill="none" opacity="0.5"/>
+                  <ellipse cx="0" cy="0" rx="11" ry="4" stroke="var(--color-gold)" stroke-width="1.5" fill="none" opacity="0.85"/>
+                  <circle cx="0" cy="0" r="2.5" fill="var(--color-gold)"/>
+                </g>
+                <g transform="translate(420 75) rotate(-10)">
+                  <ellipse cx="0" cy="0" rx="16" ry="6" stroke="var(--color-gold)" stroke-width="1.2" fill="none" opacity="0.5"/>
+                  <ellipse cx="0" cy="0" rx="10" ry="3.8" stroke="var(--color-gold)" stroke-width="1.5" fill="none" opacity="0.85"/>
+                  <circle cx="0" cy="0" r="2.5" fill="var(--color-gold)"/>
+                </g>
+                <!-- interaction lines -->
+                <path d="M 332 70 Q 350 86 358 100" stroke="var(--color-gold)" stroke-width="0.8" fill="none" stroke-dasharray="2 3" opacity="0.4"/>
+                <path d="M 360 118 Q 350 128 340 134" stroke="var(--color-gold)" stroke-width="0.8" fill="none" stroke-dasharray="2 3" opacity="0.4"/>
+                <path d="M 393 86 Q 408 80 414 78" stroke="var(--color-gold)" stroke-width="0.8" fill="none" stroke-dasharray="2 3" opacity="0.4"/>
+                <text x="365" y="180" fill="var(--color-text)" font-family="DM Sans, sans-serif" font-size="13" text-anchor="middle" font-weight="600">Cluster</text>
+                <text x="365" y="198" fill="var(--color-text-muted)" font-family="DM Mono, monospace" font-size="10" text-anchor="middle">interacting vortex field</text>
+              </g>
+            </svg>
           </div>
-          <p>The lensing direction is the strongest single piece of evidence for the model — and crucially, it does
-            not depend on the velocity measurements that drive the σ-proxy caveat.</p>
+
+          <p>The framework now investigates: multi-domain phase interactions, nonlinear coherence turbulence,
+            vacuum phase persistence, vortex-like spacetime organization, and coherent curvature transport. The
+            mathematical intuition resembles superfluid turbulence, nonlinear phase-field dynamics, and collective
+            emergent flow systems.</p>
+          <p>The central hypothesis under investigation: extreme cluster chaos may disrupt direct baryonic phase-locking
+            <em>while simultaneously</em> generating large-scale coherent curvature structures that persist independently
+            of the shocked gas distribution. This is the central open research direction of the project. It is not
+            a result.</p>
+        </div>
+      </div>
+
+      <div class="physics-block">
+        <div class="physics-number">05</div>
+        <div class="physics-content">
+          <h3>The cosmological constant — horizon thermodynamics</h3>
+          <p class="physics-lead">A second active line: deriving ρ<sub>Λ</sub> as a geometric, not particle, problem.</p>
+          <p>The cosmological constant problem stands at 122 orders of magnitude — naive quantum field theory predicts
+            vacuum energy at the Planck density, while observation gives 6 × 10⁻²⁷ kg/m³. A research direction parallel
+            to the cluster vortex work above attacks this directly. The premise: the vacuum's gravitating energy does
+            not count local QFT oscillator modes — it counts independent <em>horizon-constrained</em> gravitational
+            states bounded by the Bekenstein–Hawking horizon entropy.</p>
+
+          <div class="equation-display">
+            \[S_{\rm eh} \;=\; \frac{A_{\rm eh}}{4\,\ell_P^2} \;\sim\; \left(\frac{R_{\rm eh}}{\ell_P}\right)^2\]
+          </div>
+
+          <p>Two independent suppressions follow from this reframe.</p>
+
+          <div class="physics-callout">
+            <span class="label">Suppression 1 — area, not volume</span>
+            Volume mode counting gives N<sub>vol</sub> ~ (R<sub>eh</sub>/ℓ<sub>P</sub>)³. Horizon entropy bounds the
+            number of independent gravitational degrees of freedom by area: N<sub>phys</sub> ~ (R<sub>eh</sub>/ℓ<sub>P</sub>)².
+            Ratio: ℓ<sub>P</sub>/R<sub>eh</sub>.
+          </div>
+
+          <div class="physics-callout">
+            <span class="label">Suppression 2 — horizon coherence energy</span>
+            A horizon-coherent vacuum mode has wavelength λ ~ R<sub>eh</sub>, not ℓ<sub>P</sub>, so its characteristic
+            energy is ℏc/R<sub>eh</sub>, not the Planck quantum ℏc/ℓ<sub>P</sub>. Ratio: ℓ<sub>P</sub>/R<sub>eh</sub>.
+          </div>
+
+          <p>Combined, the two factors yield a quadratic suppression:</p>
+
+          <div class="equation-display">
+            \[\rho_\Lambda \;\sim\; \rho_P\,\left(\frac{\ell_P}{R_{\rm eh}}\right)^2\]
+          </div>
+
+          <p>Equivalently, summing one horizon-quantum (ℏc/R<sub>eh</sub>) per horizon entropy bit and dividing by the
+            horizon volume:</p>
+
+          <div class="equation-display">
+            \[\rho_\Lambda \;\sim\; \frac{c^2}{G\,R_{\rm eh}^2} \;\sim\; \frac{H^2}{G}\]
+          </div>
+
+          <p>The order-unity coefficient is fixed by Friedmann self-consistency to f = 3Ω<sub>Λ</sub>/(8π) ≈ 0.082.
+            Three independent derivations — thermodynamic, effective-degrees-of-freedom counting, and the Bousso
+            covariant entropy bound — converge on the same suppression factor.</p>
+
+          <p>Numerically, the line predicts ρ<sub>Λ</sub> ≈ 5.87 × 10⁻²⁷ kg/m³ against an observed
+            6.03 × 10⁻²⁷ kg/m³ — a 3% match, and a 122-order-of-magnitude reduction relative to the naive
+            Planck-density estimate.</p>
+
+          <div class="physics-callout">
+            <span class="label">What is still hard</span>
+            The remaining hard question — and the honest center of the cosmological constant problem — is why the
+            vacuum energy is S<sub>eh</sub> × (ℏc/R<sub>eh</sub>) rather than the zero-point sum over local modes.
+            The framework currently asserts that local UV zero-point contributions are absorbed into local gravitational
+            couplings via renormalization, leaving only the residual horizon entanglement free-energy term. Proving
+            this rigorously is the next closure target. We have a strong numerical match. We do not yet have the
+            fundamental "why."
+          </div>
         </div>
       </div>
 
@@ -1090,227 +1157,7 @@
   </div>
 </section>
 
-<!-- ============================ EQUATIONS ============================= -->
-<section class="equations" id="equations">
-  <div class="container">
-    <div class="section-tag">Core equations</div>
-    <h2 class="section-title">The mathematical skeleton</h2>
-    <p class="section-intro">
-      Five equations. Together they define the phase variable, the derived RAR, the two-stage environmental model,
-      and the falsifiable directional ladder.
-    </p>
-
-    <div class="eq-list">
-
-      <div class="eq-row">
-        <div class="eq-label">
-          <span class="eq-num">E1</span>
-          <h3>Phase-ordering variable</h3>
-          <p>The single dimensionless quantity that sorts galaxies, groups, and clusters along the same axis.</p>
-        </div>
-        <div class="eq-box">\[C_{\rm coh} = n\,\lambda_{\rm dB}^3 \;\propto\; \frac{\rho}{\sigma^3}\]</div>
-      </div>
-
-      <div class="eq-row">
-        <div class="eq-label">
-          <span class="eq-num">E2</span>
-          <h3>Horizon temperatures</h3>
-          <p>Unruh and de Sitter contributions seed the Bose-mechanism derivation of the RAR.</p>
-        </div>
-        <div class="eq-box">\[T_b = \frac{\hbar\, g_b}{2\pi c\, k_B}, \qquad T_0 = \frac{\hbar\, a_0}{2\pi c\, k_B}\]</div>
-      </div>
-
-      <div class="eq-row">
-        <div class="eq-label">
-          <span class="eq-num">E3</span>
-          <h3>Derived radial acceleration relation</h3>
-          <p>The RAR emerges structurally from fluctuation–dissipation + Bose occupation in horizon backgrounds. Not fitted.</p>
-        </div>
-        <div class="eq-box">\[g_{\rm obs} = \frac{g_b}{1 - e^{-\sqrt{g_b/a_0}}}\]</div>
-      </div>
-
-      <div class="eq-row">
-        <div class="eq-label">
-          <span class="eq-num">E4</span>
-          <h3>Two-stage environmental model</h3>
-          <p>Formation depends on density preconditioning; survival depends on tidal disruption.</p>
-        </div>
-        <div class="eq-box">\[C_{\rm form} = C_{\rm coh}\cdot\frac{f_\rho}{f_\sigma^3}, \quad S_{\rm env} = e^{-D_{\rm env}}\]</div>
-      </div>
-
-      <div class="eq-row">
-        <div class="eq-label">
-          <span class="eq-num">E5</span>
-          <h3>Directional ladder</h3>
-          <p>The headline statistical signature: a single ordering variable ranks systems across galaxies → groups → clusters.</p>
-        </div>
-        <div class="eq-box">\[\rho_S(\log C,\,\log M_{\rm excess}) = -0.94, \quad p = 7\times 10^{-10}\]</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================ TESTS ============================= -->
-<section class="tests" id="tests">
-  <div class="container">
-    <div class="section-tag">Tests and evidence</div>
-    <h2 class="section-title">What the data shows</h2>
-    <p class="section-intro">
-      Each card lists the dataset, sample, method, and result. Statuses are honestly labeled: <em>strong</em>,
-      <em>conditional</em>, <em>partial</em>, or <em>open</em>. We do not use "CONFIRMED" anywhere on this page.
-    </p>
-
-    <div class="tests-grid">
-
-      <div class="test-card">
-        <div class="test-header">
-          <span class="test-status strong">STRONG</span>
-          <span class="test-domain">Directional ladder</span>
-        </div>
-        <h3>Galaxy → group → cluster ordering</h3>
-        <p>Spearman correlation between the model's coherence variable and observed lensing mass excess across the
-          full mass ladder. The phase-ordering variable does real work here.</p>
-        <div class="test-meta">
-          <span class="meta-row"><strong>Variable:</strong> ρ/σ³ (proxy for n·λ<sub>dB</sub>³)</span>
-          <span class="meta-row"><strong>Coverage:</strong> galaxies, groups, clusters</span>
-          <span class="meta-row"><strong>Result:</strong> ρ<sub>S</sub> = −0.94, p = 7 × 10⁻¹⁰</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="test-header">
-          <span class="test-status conditional">CONDITIONAL</span>
-          <span class="test-domain">Group phase structure</span>
-        </div>
-        <h3>Isolated vs embedded groups</h3>
-        <p>Galaxy groups split by environment. Isolated groups behave more coherently; embedded ones do not. Statistically
-          significant separation, strongest in isolated systems.</p>
-        <div class="test-meta">
-          <span class="meta-row"><strong>Test:</strong> inner C<sub>coh</sub> &gt; 1 fraction</span>
-          <span class="meta-row"><strong>Result:</strong> isolated 64% vs embedded 22%</span>
-          <span class="meta-row"><strong>Significance:</strong> p ≈ 0.03</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="test-header">
-          <span class="test-status partial">PARTIAL</span>
-          <span class="test-domain">Environmental survival</span>
-        </div>
-        <h3>Two-stage suppression</h3>
-        <p>Survival probability of the coherent phase under tidal disruption. Empirical separation between isolated and
-          embedded systems is consistent with the survival model.</p>
-        <div class="test-meta">
-          <span class="meta-row"><strong>Sound speed:</strong> c<sub>s</sub> ~ 20–40 km/s (derived)</span>
-          <span class="meta-row"><strong>Result:</strong> S<sub>iso</sub> = 0.92 vs S<sub>emb</sub> = 0.76</span>
-          <span class="meta-row"><strong>Significance:</strong> p = 0.018</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="test-header">
-          <span class="test-status strong">STRONG</span>
-          <span class="test-domain">σ-independent lensing</span>
-        </div>
-        <h3>KiDS+GAMA stacked groups</h3>
-        <p>Weak-lensing mass estimates around stacked groups — independent of velocity-dispersion measurements.
-          Predicted-normal-phase systems show high mass-to-baryon ratios as expected.</p>
-        <div class="test-meta">
-          <span class="meta-row"><strong>Dataset:</strong> KiDS-1000 + GAMA group catalogue</span>
-          <span class="meta-row"><strong>Mass estimator:</strong> M<sub>200</sub>, σ-independent</span>
-          <span class="meta-row"><strong>Result:</strong> M<sub>lens</sub>/M<sub>b</sub> ~ 100–170 in normal-phase systems</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="test-header">
-          <span class="test-status partial">PARTIAL</span>
-          <span class="test-domain">Mass threshold</span>
-        </div>
-        <h3>Frozen 5 eV threshold</h3>
-        <p>The mass scale at which the phase boundary should occur. Consistent with data so far; not yet validated
-          cleanly across the full ladder.</p>
-        <div class="test-meta">
-          <span class="meta-row"><strong>Threshold:</strong> m = 5 eV (frozen)</span>
-          <span class="meta-row"><strong>Test:</strong> AUC across galaxy → cluster sequence</span>
-          <span class="meta-row"><strong>Status:</strong> partial pass — re-run pending direct σ data</span>
-        </div>
-      </div>
-
-      <div class="test-card">
-        <div class="test-header">
-          <span class="test-status open">OPEN</span>
-          <span class="test-domain">σ proxy</span>
-        </div>
-        <h3>Direct-σ boundary re-run</h3>
-        <p>The single largest scientific caveat. The galaxy σ proxy is not directly measured for every point in the
-          ladder. The next move is to redo the test using only systems with direct spectroscopic or rotation-derived
-          velocity dispersions and check the AUC.</p>
-        <div class="test-meta">
-          <span class="meta-row"><strong>Plan:</strong> repeat ladder, direct σ only</span>
-          <span class="meta-row"><strong>Pass criterion:</strong> AUC stays high</span>
-          <span class="meta-row"><strong>Status:</strong> in progress</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================ OPEN PROBLEMS ============================= -->
-<section class="open-section" id="open">
-  <div class="container">
-    <div class="section-tag">What's left to prove</div>
-    <h2 class="section-title">Open problems on the table</h2>
-    <p class="section-intro">
-      These are the unresolved items, listed honestly. Solving any one of them would substantially strengthen the
-      framework; failing to solve them would substantially weaken it.
-    </p>
-
-    <div class="open-grid">
-
-      <div class="open-card">
-        <span class="q-tag">OQ1 — First principles</span>
-        <h4>Derive the universal vacuum kernel</h4>
-        <p>The vacuum response kernel is currently treated as <em>G<sub>ret</sub><sup>(b)</sup> ≈ G<sub>ret</sub><sup>(0)</sup></em>
-          — an effective approximation. A complete derivation from quantum gravity remains open.</p>
-      </div>
-
-      <div class="open-card">
-        <span class="q-tag">OQ2 — EFT consistency</span>
-        <h4>Derive c<sub>s</sub> and full EFT</h4>
-        <p>The sound speed c<sub>s</sub> ~ 20–40 km/s is currently estimated from c<sub>s</sub> ~ √(g<sub>b</sub> r). It needs
-          to be derived self-consistently within the effective theory rather than imposed as a parametric estimate.</p>
-      </div>
-
-      <div class="open-card">
-        <span class="q-tag">OQ3 — Boundary validation</span>
-        <h4>Validate threshold across the ladder</h4>
-        <p>The frozen 5 eV threshold has to be re-run cleanly across the galaxy → group → cluster sequence using only
-          systems with directly measured velocity dispersions. The AUC must stay high under that restriction.</p>
-      </div>
-
-      <div class="open-card">
-        <span class="q-tag">OQ4 — σ proxy</span>
-        <h4>Replace the proxy</h4>
-        <p>The galaxy-σ proxy in the directional ladder is the largest remaining caveat. The headline correlation must
-          be reproduced using direct spectroscopic σ before the boundary result can be called final.</p>
-      </div>
-
-      <div class="open-card">
-        <span class="q-tag">OQ5 — Tier 2 program</span>
-        <h4>Lift to first-principles theory</h4>
-        <p>The current framework is Tier 1 (effective field theory / phenomenology). The Tier 2 program — deriving
-          everything from first principles, removing adjustable parameters, and explaining why the vacuum behaves
-          this way — is the long-term direction.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================ EARLIER WORK ============================= -->
+<!-- ============================ EARLIER FRAMEWORK ============================= -->
 <section class="paper" id="paper">
   <div class="container">
     <div class="paper-inner">
@@ -1326,23 +1173,23 @@
         </svg>
       </div>
       <div class="paper-text">
-        <h2>Earlier framework</h2>
-        <p>The Gradient-Activated Pressure (GAP) framework — published as v40 in April 2026 — is preserved here for
-          reference. The current coherence-based phase model supersedes it: GAP attempted to derive galactic and cosmological
-          gravity from a Ξ scalar field with a 4π³ Euclidean bridge. The current framework reorganizes the same physics
-          around the phase-ordering variable ρ/σ³ and a Bose-mechanism derivation of the RAR.</p>
+        <h2>Earlier framework — archival</h2>
+        <p>The Gradient-Activated Pressure (GAP) paper, v40 from April 2026, documents the first-generation
+          formulation of Vacuum Gravity Theory: a Ξ scalar field, the 4π³ Euclidean bridge, and the master action
+          from which the galactic-scale results were derived. It is preserved here as a record of the original
+          framework. The current research direction supersedes it where the cluster-merger physics is concerned.</p>
         <div class="paper-meta">
           <span>Brian Reno</span>
           <span class="dot">·</span>
           <span>April 2026</span>
           <span class="dot">·</span>
-          <span>GAP v40 — superseded</span>
+          <span>VGSG / GAP — first-generation framework</span>
         </div>
         <a href="GAP_theory_paper_v40.pdf" class="btn btn-ghost btn-large" download>
           Download GAP v40 (PDF, archival)
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
-        <p class="paper-note">A paper for the coherence phase model is in preparation.</p>
+        <p class="paper-note">A paper for the current vortex / multi-domain direction is in preparation.</p>
       </div>
     </div>
   </div>
@@ -1354,7 +1201,8 @@
     <div class="section-tag">Community</div>
     <h2 class="section-title">Questions, critiques, collaboration</h2>
     <p class="section-intro">
-      Critique especially welcome. The open questions on this site are the ones we know about — send the ones we've missed.
+      Critique especially welcome. We have stated the failure plainly because we want it engaged with —
+      mathematical objections, alternative reformulations, and pointers to relevant prior work are all useful.
     </p>
 
     <div class="feedback-inner">
@@ -1372,7 +1220,7 @@
         <div class="form-group">
           <label for="type">Type of feedback</label>
           <select id="type" name="type">
-            <option value="question">Question about the theory</option>
+            <option value="question">Question about the framework</option>
             <option value="critique">Scientific critique</option>
             <option value="collaboration">Collaboration inquiry</option>
             <option value="other">Other</option>
@@ -1397,10 +1245,10 @@
         <h3>Status legend</h3>
         <div class="label-legend">
           <h4>How we mark each area</h4>
-          <div class="legend-item"><span class="badge strong">STRONG</span> — Robust effect, verified across the dataset</div>
-          <div class="legend-item"><span class="badge partial">PARTIAL</span> — Consistent with data, derivation incomplete</div>
-          <div class="legend-item"><span class="badge partial">CONDITIONAL</span> — Holds under stated conditions</div>
-          <div class="legend-item"><span class="badge open">OPEN</span> — Unresolved or in active development</div>
+          <div class="legend-item"><span class="badge strong">STRONG</span> — Robust, reproduced across the dataset</div>
+          <div class="legend-item"><span class="badge partial">SUGGESTIVE</span> — Consistent with data, derivation incomplete</div>
+          <div class="legend-item"><span class="badge open">EXPLORATORY</span> — Active research direction, no claim of result</div>
+          <div class="legend-item"><span class="badge open">FAILED</span> — Stated as a structural failure, not papered over</div>
         </div>
       </div>
     </div>
@@ -1423,30 +1271,28 @@
           </svg>
           <span>vacuumgravitytheory.org</span>
         </a>
-        <p>A coherence-based phase model — gravity from the structure of the vacuum, organized by a single physical variable.</p>
+        <p>An ongoing research framework — gravity from the structure of the vacuum, organized by coherence,
+          honest about what works and what doesn't.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <div>
-          <h4>Theory</h4>
+          <h4>The framework</h4>
           <ul role="list">
             <li><a href="#summary">Summary</a></li>
-            <li><a href="#physics">Mechanism</a></li>
-            <li><a href="#equations">Equations</a></li>
+            <li><a href="#status">Where it stands</a></li>
+            <li><a href="#story">The story</a></li>
           </ul>
         </div>
         <div>
-          <h4>Evidence</h4>
+          <h4>Reference</h4>
           <ul role="list">
-            <li><a href="#headline">Headline result</a></li>
-            <li><a href="#status">Status</a></li>
-            <li><a href="#tests">Tests &amp; evidence</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>More</h4>
-          <ul role="list">
-            <li><a href="#open">Open problems</a></li>
             <li><a href="#paper">Earlier framework (GAP)</a></li>
+            <li><a href="GAP_theory_paper_v40.pdf">GAP v40 PDF</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul role="list">
             <li><a href="#feedback">Feedback</a></li>
             <li><a href="mailto:brianreno@gmail.com">Email</a></li>
           </ul>
@@ -1455,8 +1301,8 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Brian Reno.</p>
-      <p class="footer-disclaimer">This site presents the framework as it currently stands. Results have been derived
-        and tested against existing data but have not undergone formal peer review. Critique welcome.</p>
+      <p class="footer-disclaimer">This site presents the framework as it currently stands — a research program in
+        progress, with stated successes and stated failures. Results have not undergone formal peer review. Critique welcome.</p>
     </div>
   </div>
 </footer>
